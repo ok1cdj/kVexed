@@ -17,6 +17,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -49,7 +53,9 @@ private const val GRID_COLOR = 0xFFB0B0B0.toInt()
 
 @Composable
 fun GameScreen(vm: GameViewModel, onAbout: () -> Unit) {
+    if (vm.solutionActive) { SolutionView(vm); return }
     val board = vm.board ?: return
+    var confirmSolution by remember { mutableStateOf(false) }
 
     Column(modifier = Modifier.fillMaxSize().background(Color.White)) {
         // Header: pack · level x/n · info
@@ -83,11 +89,13 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit) {
         Spacer(Modifier.weight(1f))
 
         // Status / end-state message — full width on its own line, so it always
-        // fits regardless of move count. No inline button competing for width.
+        // fits regardless of move count. Shows the tighter "best-known" target
+        // next to par when we have a shorter solution for this level.
+        val bestSuffix = vm.bestPar?.let { " · Best $it" } ?: ""
         val message = when (vm.gameState) {
-            GameState.WON -> "Solved in ${vm.moveCount} moves · par ${vm.par}"
+            GameState.WON -> "Solved in ${vm.moveCount} moves · par ${vm.par}$bestSuffix"
             GameState.LOST -> "Stuck — undo or restart"
-            GameState.PLAYING -> "Moves ${vm.moveCount} · Par ${vm.par}"
+            GameState.PLAYING -> "Moves ${vm.moveCount} · Par ${vm.par}$bestSuffix"
         }
         Box(
             modifier = Modifier.fillMaxWidth().height(40.dp).padding(horizontal = 12.dp),
@@ -100,25 +108,109 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit) {
             )
         }
 
-        // Controls — a single fixed-height row whose contents depend on state, so
-        // nothing changes size between playing and finished.
+        // Controls — a single fixed-height row whose contents depend on state.
         Row(
             modifier = Modifier.fillMaxWidth().height(80.dp).padding(horizontal = 12.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             when (vm.gameState) {
-                GameState.WON ->
+                GameState.WON -> {
                     GameButton("Next level", modifier = Modifier.weight(1f), onClick = vm::nextLevel)
+                    GameButton("Solve", fontSize = 14.sp, modifier = Modifier.weight(1f)) { confirmSolution = true }
+                }
                 GameState.LOST -> {
                     GameButton("Undo", enabled = vm.canUndo, modifier = Modifier.weight(1f), onClick = vm::undo)
                     GameButton("Restart", modifier = Modifier.weight(1f), onClick = vm::restart)
+                    GameButton("Solve", fontSize = 13.sp, modifier = Modifier.weight(1f)) { confirmSolution = true }
                 }
                 GameState.PLAYING -> {
-                    GameButton("Undo", enabled = vm.canUndo, modifier = Modifier.weight(1f), onClick = vm::undo)
-                    GameButton("Restart", modifier = Modifier.weight(1f), onClick = vm::restart)
-                    GameButton("Hint", modifier = Modifier.weight(1f), onClick = vm::showHint)
+                    GameButton("Undo", enabled = vm.canUndo, fontSize = 13.sp, modifier = Modifier.weight(1f), onClick = vm::undo)
+                    GameButton("Restart", fontSize = 13.sp, modifier = Modifier.weight(1f), onClick = vm::restart)
+                    GameButton("Hint", fontSize = 13.sp, modifier = Modifier.weight(1f), onClick = vm::showHint)
+                    GameButton("Solve", fontSize = 13.sp, modifier = Modifier.weight(1f)) { confirmSolution = true }
                 }
+            }
+        }
+    }
+
+    if (confirmSolution) {
+        val n = vm.bestPar ?: vm.par
+        val kind = if (vm.bestPar != null) "best-known" else "full"
+        ConfirmDialog(
+            title = "Show solution?",
+            body = "This reveals the $kind solution ($n moves) — step through it move by move. It will spoil the puzzle.",
+            confirmLabel = "Show",
+            onConfirm = { confirmSolution = false; vm.startSolution() },
+            onDismiss = { confirmSolution = false },
+        )
+    }
+}
+
+/** Step-through viewer for the best-known (or shipped) solution. */
+@Composable
+private fun SolutionView(vm: GameViewModel) {
+    val board = vm.solutionBoard ?: return
+    Column(modifier = Modifier.fillMaxSize().background(Color.White)) {
+        Row(
+            modifier = Modifier.fillMaxWidth().height(56.dp).padding(horizontal = 12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            BackButton(onClick = vm::exitSolution)
+            Spacer(Modifier.width(4.dp))
+            TextMMD(
+                text = "Solution · ${if (vm.solutionIsBest) "best known" else "par"} ${vm.solutionLength}",
+                fontSize = 16.sp, fontWeight = FontWeight.Bold,
+            )
+        }
+
+        Spacer(Modifier.weight(1f))
+        // Board at the current step; the upcoming move is highlighted like a hint.
+        BoardCanvas(board = board, selected = null, hint = vm.solutionNextMove, onCellTap = { _, _ -> })
+        Spacer(Modifier.weight(1f))
+
+        Box(
+            modifier = Modifier.fillMaxWidth().height(40.dp).padding(horizontal = 12.dp),
+            contentAlignment = Alignment.CenterStart,
+        ) {
+            TextMMD(text = "Move ${vm.solutionStep}/${vm.solutionLength}", fontSize = 15.sp)
+        }
+
+        Row(
+            modifier = Modifier.fillMaxWidth().height(80.dp).padding(horizontal = 12.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            GameButton("‹ Prev", enabled = vm.solutionStep > 0, modifier = Modifier.weight(1f), onClick = vm::solutionPrev)
+            GameButton("Next ›", enabled = vm.solutionStep < vm.solutionLength, modifier = Modifier.weight(1f), onClick = vm::solutionNext)
+            GameButton("Done", modifier = Modifier.weight(1f), onClick = vm::exitSolution)
+        }
+    }
+}
+
+@Composable
+private fun ConfirmDialog(
+    title: String,
+    body: String,
+    confirmLabel: String,
+    onConfirm: () -> Unit,
+    onDismiss: () -> Unit,
+) {
+    androidx.compose.ui.window.Dialog(onDismissRequest = onDismiss) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .border(1.dp, Color.Black, RoundedCornerShape(12.dp))
+                .background(Color.White, RoundedCornerShape(12.dp))
+                .padding(16.dp),
+        ) {
+            TextMMD(text = title, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+            Spacer(Modifier.height(8.dp))
+            TextMMD(text = body, fontSize = 14.sp)
+            Spacer(Modifier.height(16.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                GameButton("Cancel", modifier = Modifier.weight(1f), onClick = onDismiss)
+                GameButton(confirmLabel, modifier = Modifier.weight(1f), onClick = onConfirm)
             }
         }
     }
@@ -222,6 +314,7 @@ private fun GameButton(
     text: String,
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
+    fontSize: androidx.compose.ui.unit.TextUnit = 15.sp,
     onClick: () -> Unit,
 ) {
     ButtonMMD(
@@ -234,7 +327,7 @@ private fun GameButton(
         // Center the label in the button box — MMD's default content alignment
         // leaves it sitting high.
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-            TextMMD(text = text, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+            TextMMD(text = text, fontSize = fontSize, fontWeight = FontWeight.Bold)
         }
     }
 }

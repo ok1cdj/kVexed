@@ -65,12 +65,29 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
         private set
     private var hintUsedThisLevel = false
 
+    // --- solution playback (step-through viewer) ------------------------------
+    var solutionActive by mutableStateOf(false)
+        private set
+    var solutionStep by mutableStateOf(0)
+        private set
+    private var solutionMoveList: List<Move> = emptyList()
+    private var solutionBoards: List<Board> = emptyList()
+
     val levelTitle: String get() = level?.title ?: ""
     val par: Int get() = level?.par ?: 0
+    /** Best-known par (< par) when a shorter solution exists, else null. */
+    val bestPar: Int? get() = level?.bestPar
     val levelIndex: Int get() = (screen as? Screen.Game)?.levelIndex ?: 0
     val packTitle: String get() = pack?.title ?: ""
     val levelCount: Int get() = pack?.levels?.size ?: 0
     val canUndo: Boolean get() = undoStack.isNotEmpty()
+
+    val solutionBoard: Board? get() = solutionBoards.getOrNull(solutionStep)
+    val solutionLength: Int get() = solutionMoveList.size
+    /** The move about to be played at the current step (to highlight), or null at the end. */
+    val solutionNextMove: Move? get() = solutionMoveList.getOrNull(solutionStep)
+    /** True when the viewer is showing the shorter best-known solution (vs the shipped one). */
+    val solutionIsBest: Boolean get() = level?.bestKnown != null
 
     init {
         viewModelScope.launch { progress = store.load() }
@@ -198,6 +215,31 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
             hintUsedThisLevel = true
         }
     }
+
+    // --- solution playback ----------------------------------------------------
+
+    /** Enter the step-through viewer, showing the best-known solution if we have
+     *  one (shorter than par), otherwise the shipped solution. Precomputes each
+     *  board state so stepping is instant and never mutates the live game. */
+    fun startSolution() {
+        val lv = level ?: return
+        val moves = lv.bestKnownMoves() ?: runCatching { lv.solutionMoves() }.getOrDefault(emptyList())
+        val states = ArrayList<Board>(moves.size + 1)
+        var b = lv.toBoard()
+        states.add(b)
+        for (m in moves) {
+            val r = Engine.move(b, m.x, m.y, m.dir)
+            if (r is MoveResult.Moved) { b = r.board; states.add(b) } else break
+        }
+        solutionMoveList = moves
+        solutionBoards = states
+        solutionStep = 0
+        solutionActive = true
+    }
+
+    fun solutionNext() { if (solutionStep < solutionBoards.size - 1) solutionStep++ }
+    fun solutionPrev() { if (solutionStep > 0) solutionStep-- }
+    fun exitSolution() { solutionActive = false }
 
     private fun onSolved() {
         val packId = (screen as? Screen.Game)?.packId ?: pack?.id ?: return
