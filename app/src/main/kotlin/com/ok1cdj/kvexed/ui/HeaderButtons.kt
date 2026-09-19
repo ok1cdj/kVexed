@@ -34,6 +34,21 @@ fun InfoButton(onClick: () -> Unit) {
     }
 }
 
+/** The Settings (gear/sliders) button in a 48dp touch target. */
+@Composable
+fun SettingsButton(onClick: () -> Unit) {
+    Box(
+        modifier = Modifier.size(TOUCH_TARGET).clickable(onClick = onClick),
+        contentAlignment = Alignment.Center,
+    ) {
+        Image(
+            painter = painterResource(R.drawable.ic_settings),
+            contentDescription = "Settings",
+            modifier = Modifier.size(INFO_ICON),
+        )
+    }
+}
+
 /** The back (‹) button: a large chevron in a 48dp touch target. */
 @Composable
 fun BackButton(onClick: () -> Unit) {

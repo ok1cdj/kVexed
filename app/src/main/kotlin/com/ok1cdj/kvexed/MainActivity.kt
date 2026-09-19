@@ -27,6 +27,7 @@ import com.ok1cdj.kvexed.ui.KVexedTheme
 import com.ok1cdj.kvexed.ui.LevelListScreen
 import com.ok1cdj.kvexed.ui.PackListScreen
 import com.ok1cdj.kvexed.ui.Screen
+import com.ok1cdj.kvexed.ui.SettingsDialog
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +40,7 @@ class MainActivity : ComponentActivity() {
 private fun App() {
     val vm: GameViewModel = viewModel()
     var showAbout by remember { mutableStateOf(false) }
+    var showSettings by remember { mutableStateOf(false) }
 
     // Persist progress (and the resumable board) whenever the app goes to the
     // background — per the spec, on pause rather than continuously.
@@ -68,11 +70,19 @@ private fun App() {
             .systemBarsPadding(),
     ) {
         when (val s = vm.screen) {
-            Screen.PackList -> PackListScreen(vm, onAbout = { showAbout = true })
+            Screen.PackList -> PackListScreen(vm, onAbout = { showAbout = true }, onSettings = { showSettings = true })
             is Screen.LevelList -> LevelListScreen(vm, s.packId)
             is Screen.Game -> GameScreen(vm, onAbout = { showAbout = true })
         }
     }
 
     if (showAbout) AboutDialog(onDismiss = { showAbout = false })
+    if (showSettings) {
+        SettingsDialog(
+            settings = vm.settings,
+            onShowSolve = { vm.setHideSolve(!it) },
+            onHaptics = vm::setHaptics,
+            onDismiss = { showSettings = false },
+        )
+    }
 }

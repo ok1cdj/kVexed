@@ -34,7 +34,7 @@ import com.mudita.mmd.components.text.TextMMD
  * "Variety 03–41" section. (No "extra" group — the bundled corpus has none.)
  */
 @Composable
-fun PackListScreen(vm: GameViewModel, onAbout: () -> Unit) {
+fun PackListScreen(vm: GameViewModel, onAbout: () -> Unit, onSettings: () -> Unit) {
     val canonical = vm.packs.filter { it.group == PackGroup.CANONICAL }
     val variety = vm.packs.filter { it.group == PackGroup.VARIETY }
     val extra = vm.packs.filter { it.group == PackGroup.EXTRA }
@@ -47,7 +47,10 @@ fun PackListScreen(vm: GameViewModel, onAbout: () -> Unit) {
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             TextMMD(text = "Vexed", fontSize = 22.sp, fontWeight = FontWeight.Bold)
-            InfoButton(onClick = onAbout)
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                SettingsButton(onClick = onSettings)
+                InfoButton(onClick = onAbout)
+            }
         }
 
         LazyColumn(modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp)) {

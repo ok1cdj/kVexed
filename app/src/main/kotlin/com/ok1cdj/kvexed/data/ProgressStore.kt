@@ -34,6 +34,12 @@ data class Progress(
     val packs: Map<String, PackProgress> = emptyMap(),
 )
 
+/** User-configurable options. */
+data class Settings(
+    val hideSolve: Boolean = true,   // the Solve/spoiler button is hidden by default
+    val haptics: Boolean = true,     // buzz on each completed move
+)
+
 private val Context.dataStore by preferencesDataStore(name = "progress")
 
 /**
@@ -59,6 +65,21 @@ class ProgressStore(private val context: Context) {
             lastLevel = (global["lastLevel"] as? Double)?.toInt() ?: 0,
             packs = packs,
         )
+    }
+
+    suspend fun loadSettings(): Settings {
+        val prefs = context.dataStore.data.first()
+        val m = prefs[SETTINGS]?.let { Json.parseObject(it) } ?: return Settings()
+        return Settings(
+            hideSolve = m["hideSolve"] as? Boolean ?: true,
+            haptics = m["haptics"] as? Boolean ?: true,
+        )
+    }
+
+    suspend fun saveSettings(s: Settings) {
+        context.dataStore.edit { prefs ->
+            prefs[SETTINGS] = Json.stringify(mapOf("hideSolve" to s.hideSolve, "haptics" to s.haptics))
+        }
     }
 
     suspend fun save(progress: Progress) {
@@ -108,6 +129,7 @@ class ProgressStore(private val context: Context) {
 
     private companion object {
         val GLOBAL = stringPreferencesKey("state")
+        val SETTINGS = stringPreferencesKey("settings")
         const val PACK_PREFIX = "pack:"
     }
 }

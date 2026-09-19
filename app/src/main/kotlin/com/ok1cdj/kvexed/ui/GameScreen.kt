@@ -17,11 +17,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -53,6 +56,13 @@ private const val GRID_COLOR = 0xFFB0B0B0.toInt()
 
 @Composable
 fun GameScreen(vm: GameViewModel, onAbout: () -> Unit) {
+    // Fire a short haptic when a move completes (respects the Haptics setting;
+    // performHapticFeedback needs no VIBRATE permission).
+    val haptic = LocalHapticFeedback.current
+    LaunchedEffect(vm.moveTick) {
+        if (vm.moveTick > 0 && vm.haptics) haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+    }
+
     if (vm.solutionActive) { SolutionView(vm); return }
     val board = vm.board ?: return
     var confirmSolution by remember { mutableStateOf(false) }
@@ -114,21 +124,25 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit) {
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
+            // Solve is optional (hidden by default; enabled in Settings). Font
+            // shrinks a touch when it's present to keep four buttons on one line.
+            val solve = vm.showSolve
+            val fs = if (solve) 13.sp else 15.sp
             when (vm.gameState) {
                 GameState.WON -> {
                     GameButton("Next level", modifier = Modifier.weight(1f), onClick = vm::nextLevel)
-                    GameButton("Solve", fontSize = 14.sp, modifier = Modifier.weight(1f)) { confirmSolution = true }
+                    if (solve) GameButton("Solve", fontSize = 14.sp, modifier = Modifier.weight(1f)) { confirmSolution = true }
                 }
                 GameState.LOST -> {
-                    GameButton("Undo", enabled = vm.canUndo, modifier = Modifier.weight(1f), onClick = vm::undo)
-                    GameButton("Restart", modifier = Modifier.weight(1f), onClick = vm::restart)
-                    GameButton("Solve", fontSize = 13.sp, modifier = Modifier.weight(1f)) { confirmSolution = true }
+                    GameButton("Undo", enabled = vm.canUndo, fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::undo)
+                    GameButton("Restart", fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::restart)
+                    if (solve) GameButton("Solve", fontSize = fs, modifier = Modifier.weight(1f)) { confirmSolution = true }
                 }
                 GameState.PLAYING -> {
-                    GameButton("Undo", enabled = vm.canUndo, fontSize = 13.sp, modifier = Modifier.weight(1f), onClick = vm::undo)
-                    GameButton("Restart", fontSize = 13.sp, modifier = Modifier.weight(1f), onClick = vm::restart)
-                    GameButton("Hint", fontSize = 13.sp, modifier = Modifier.weight(1f), onClick = vm::showHint)
-                    GameButton("Solve", fontSize = 13.sp, modifier = Modifier.weight(1f)) { confirmSolution = true }
+                    GameButton("Undo", enabled = vm.canUndo, fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::undo)
+                    GameButton("Restart", fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::restart)
+                    GameButton("Hint", fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::showHint)
+                    if (solve) GameButton("Solve", fontSize = fs, modifier = Modifier.weight(1f)) { confirmSolution = true }
                 }
             }
         }

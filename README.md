@@ -22,6 +22,10 @@ permissions, no services.**
 - Bundles the original **Vexed level packs** (48 packs, 2800 puzzles), each with
   a par derived from the shipped human solution — golf your move count against it.
 - **Unlimited undo**, restart, and a **hint** that reveals only the next move.
+- **Settings** (gear, top-right): show/hide a **Solve** button that steps through
+  the best-known solution (hidden by default so it doesn't spoil), and toggle
+  optional **haptic feedback** on each move (uses the system haptic channel — no
+  `VIBRATE` permission).
 - Resumes exactly where you left off after the app is killed.
 - Built for e-ink: pure 1-bit black/white, vector block glyphs, no animations,
   tap-to-move (no swipe).

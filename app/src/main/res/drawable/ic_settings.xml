@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Settings: three slider rows with handles (a "tune" icon), black on transparent. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- three horizontal rails -->
+    <path android:strokeColor="#000000" android:strokeWidth="1.6" android:pathData="M3,6 H21" />
+    <path android:strokeColor="#000000" android:strokeWidth="1.6" android:pathData="M3,12 H21" />
+    <path android:strokeColor="#000000" android:strokeWidth="1.6" android:pathData="M3,18 H21" />
+    <!-- handles (white fill + black ring) so they read on top of the rails -->
+    <path android:fillColor="#FFFFFF" android:strokeColor="#000000" android:strokeWidth="1.6"
+        android:pathData="M12,6 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z" />
+    <path android:fillColor="#FFFFFF" android:strokeColor="#000000" android:strokeWidth="1.6"
+        android:pathData="M5,12 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z" />
+    <path android:fillColor="#FFFFFF" android:strokeColor="#000000" android:strokeWidth="1.6"
+        android:pathData="M14,18 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0 Z" />
+</vector>

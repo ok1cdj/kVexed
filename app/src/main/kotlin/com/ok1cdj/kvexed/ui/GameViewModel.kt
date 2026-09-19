@@ -20,6 +20,7 @@ import com.ok1cdj.kvexed.data.LevelStat
 import com.ok1cdj.kvexed.data.PackProgress
 import com.ok1cdj.kvexed.data.Progress
 import com.ok1cdj.kvexed.data.ProgressStore
+import com.ok1cdj.kvexed.data.Settings
 import kotlinx.coroutines.launch
 
 /** Which screen is showing. */
@@ -42,6 +43,13 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
     val packs: List<PackInfo> = LevelParser.loadIndex()
 
     var progress by mutableStateOf(Progress())
+        private set
+
+    var settings by mutableStateOf(Settings())
+        private set
+
+    /** Monotonic counter bumped on each completed forward move — drives haptics. */
+    var moveTick by mutableStateOf(0)
         private set
 
     var screen: Screen by mutableStateOf(Screen.PackList)
@@ -89,8 +97,28 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
     /** True when the viewer is showing the shorter best-known solution (vs the shipped one). */
     val solutionIsBest: Boolean get() = level?.bestKnown != null
 
+    /** Whether the Solve/spoiler button is offered (off by default). */
+    val showSolve: Boolean get() = !settings.hideSolve
+    /** Whether haptic feedback fires on completed moves. */
+    val haptics: Boolean get() = settings.haptics
+
     init {
-        viewModelScope.launch { progress = store.load() }
+        viewModelScope.launch {
+            progress = store.load()
+            settings = store.loadSettings()
+        }
+    }
+
+    fun setHideSolve(hide: Boolean) {
+        settings = settings.copy(hideSolve = hide)
+        val s = settings
+        viewModelScope.launch { store.saveSettings(s) }
+    }
+
+    fun setHaptics(on: Boolean) {
+        settings = settings.copy(haptics = on)
+        val s = settings
+        viewModelScope.launch { store.saveSettings(s) }
     }
 
     // --- navigation -----------------------------------------------------------
@@ -182,6 +210,7 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
                 undoStack.addLast(b)
                 board = r.board
                 moveCount++
+                moveTick++ // signal the UI to fire haptic feedback for this move
                 gameState = Engine.state(r.board)
                 if (gameState == GameState.WON) onSolved()
             }
