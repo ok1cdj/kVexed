@@ -55,7 +55,7 @@ private const val WALL_COLOR = 0xFFC8C8C8.toInt()
 private const val GRID_COLOR = 0xFFB0B0B0.toInt()
 
 @Composable
-fun GameScreen(vm: GameViewModel, onAbout: () -> Unit) {
+fun GameScreen(vm: GameViewModel, onAbout: () -> Unit, onSettings: () -> Unit) {
     // Fire a short haptic when a move completes (respects the Haptics setting;
     // performHapticFeedback needs no VIBRATE permission).
     val haptic = LocalHapticFeedback.current
@@ -82,7 +82,10 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit) {
                     fontSize = 16.sp, fontWeight = FontWeight.Bold,
                 )
             }
-            InfoButton(onClick = onAbout)
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                SettingsButton(onClick = onSettings)
+                InfoButton(onClick = onAbout)
+            }
         }
 
         // Center the board vertically between the header and the controls.

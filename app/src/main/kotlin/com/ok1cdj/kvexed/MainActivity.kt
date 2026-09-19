@@ -72,7 +72,7 @@ private fun App() {
         when (val s = vm.screen) {
             Screen.PackList -> PackListScreen(vm, onAbout = { showAbout = true }, onSettings = { showSettings = true })
             is Screen.LevelList -> LevelListScreen(vm, s.packId)
-            is Screen.Game -> GameScreen(vm, onAbout = { showAbout = true })
+            is Screen.Game -> GameScreen(vm, onAbout = { showAbout = true }, onSettings = { showSettings = true })
         }
     }
 
