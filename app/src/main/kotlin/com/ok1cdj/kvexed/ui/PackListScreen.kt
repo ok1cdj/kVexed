@@ -47,8 +47,7 @@ fun PackListScreen(vm: GameViewModel, onAbout: () -> Unit) {
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             TextMMD(text = "Vexed", fontSize = 22.sp, fontWeight = FontWeight.Bold)
-            TextMMD(text = "ⓘ", fontSize = 20.sp, fontWeight = FontWeight.Bold,
-                modifier = Modifier.clickable(onClick = onAbout).padding(8.dp))
+            InfoButton(onClick = onAbout)
         }
 
         LazyColumn(modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp)) {

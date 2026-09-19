@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -44,8 +45,8 @@ fun LevelListScreen(vm: GameViewModel, packId: String) {
             modifier = Modifier.fillMaxWidth().height(56.dp).padding(horizontal = 12.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            TextMMD(text = "‹", fontSize = 22.sp, fontWeight = FontWeight.Bold,
-                modifier = Modifier.clickable(onClick = vm::backToPacks).padding(end = 12.dp))
+            BackButton(onClick = vm::backToPacks)
+            Spacer(Modifier.width(4.dp))
             TextMMD(text = "${info.title} · ${prog.solvedCount}/$count",
                 fontSize = 18.sp, fontWeight = FontWeight.Bold)
         }

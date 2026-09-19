@@ -59,14 +59,14 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit) {
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                IconTextButton(text = "‹", onClick = vm::backToLevels)
-                Spacer(Modifier.width(8.dp))
+                BackButton(onClick = vm::backToLevels)
+                Spacer(Modifier.width(4.dp))
                 TextMMD(
                     text = "${vm.packTitle} · ${vm.levelIndex + 1}/${vm.levelCount}",
                     fontSize = 16.sp, fontWeight = FontWeight.Bold,
                 )
             }
-            IconTextButton(text = "ⓘ", onClick = onAbout)
+            InfoButton(onClick = onAbout)
         }
 
         // Center the board vertically between the header and the controls.
@@ -236,12 +236,5 @@ private fun GameButton(
         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             TextMMD(text = text, fontSize = 15.sp, fontWeight = FontWeight.Bold)
         }
-    }
-}
-
-@Composable
-private fun IconTextButton(text: String, onClick: () -> Unit) {
-    ButtonMMD(onClick = onClick, shape = RoundedCornerShape(8.dp)) {
-        TextMMD(text = text, fontSize = 20.sp, fontWeight = FontWeight.Bold)
     }
 }
