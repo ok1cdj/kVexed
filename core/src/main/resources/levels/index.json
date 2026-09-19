@@ -1,0 +1,434 @@
+[
+  {
+    "id": "01-classic-levels",
+    "title": "Classic Levels",
+    "author": "James A. McCombe",
+    "description": "The classic levels released with the original Vexed!",
+    "levels": 59,
+    "group": "canonical",
+    "order": 1
+  },
+  {
+    "id": "02-classic-ii-levels",
+    "title": "Classic II Levels",
+    "author": "Steve Haynal",
+    "description": "This is the challenging follow-on to the Vexed Classic levels.",
+    "levels": 58,
+    "group": "canonical",
+    "order": 2
+  },
+  {
+    "id": "03-variety-pack",
+    "title": "Variety Pack",
+    "author": "Vexed Development Team",
+    "description": "These levels provide a full spectrum of difficulties from easy to hard.",
+    "levels": 60,
+    "group": "canonical",
+    "order": 3
+  },
+  {
+    "id": "04-variety-ii-pack",
+    "title": "Variety II Pack",
+    "author": "Vexed Development Team",
+    "description": "Continuation of the Variety Pack. From easy to hard.",
+    "levels": 60,
+    "group": "canonical",
+    "order": 4
+  },
+  {
+    "id": "05-children-s-pack",
+    "title": "Children's Pack",
+    "author": "Vexed Development Team",
+    "description": "Very easy levels meant for children.",
+    "levels": 60,
+    "group": "canonical",
+    "order": 5
+  },
+  {
+    "id": "06-twister-levels",
+    "title": "Twister Levels",
+    "author": "Vexed Development Team",
+    "description": "Difficult. Many of these levels have twists that add challenge.",
+    "levels": 34,
+    "group": "canonical",
+    "order": 6
+  },
+  {
+    "id": "07-confusion-pack",
+    "title": "Confusion Pack",
+    "author": "Vexed Development Team",
+    "description": "Hard! These levels are tricky and require careful planning to solve.",
+    "levels": 60,
+    "group": "canonical",
+    "order": 7
+  },
+  {
+    "id": "08-panic-pack",
+    "title": "Panic Pack",
+    "author": "Vexed Development Team",
+    "description": "Very Hard! So hard you'll panic after the first one.",
+    "levels": 60,
+    "group": "canonical",
+    "order": 8
+  },
+  {
+    "id": "09-impossible-pack",
+    "title": "Impossible Pack",
+    "author": "Vexed Development Team",
+    "description": "Impossible. You need to be Einstein to make it through this game pack!",
+    "levels": 60,
+    "group": "canonical",
+    "order": 9
+  },
+  {
+    "id": "variety-3-pack",
+    "title": "Variety 3 Pack",
+    "author": "Vexed Development Team",
+    "description": "Variety level pack",
+    "levels": 60,
+    "group": "variety",
+    "order": 103
+  },
+  {
+    "id": "variety-4-pack",
+    "title": "Variety 4 Pack",
+    "author": "Vexed Development Team",
+    "description": "Variety level pack",
+    "levels": 60,
+    "group": "variety",
+    "order": 104
+  },
+  {
+    "id": "variety-5-pack",
+    "title": "Variety 5 Pack",
+    "author": "Vexed Development Team",
+    "description": "Variety level pack",
+    "levels": 60,
+    "group": "variety",
+    "order": 105
+  },
+  {
+    "id": "variety-6-pack",
+    "title": "Variety 6 Pack",
+    "author": "Vexed Development Team",
+    "description": "Variety level pack",
+    "levels": 60,
+    "group": "variety",
+    "order": 106
+  },
+  {
+    "id": "variety-7-pack",
+    "title": "Variety 7 Pack",
+    "author": "Vexed Development Team",
+    "description": "Variety level pack",
+    "levels": 60,
+    "group": "variety",
+    "order": 107
+  },
+  {
+    "id": "variety-8-pack",
+    "title": "Variety 8 Pack",
+    "author": "Vexed Development Team",
+    "description": "Variety level pack",
+    "levels": 60,
+    "group": "variety",
+    "order": 108
+  },
+  {
+    "id": "variety-9-pack",
+    "title": "Variety 9 Pack",
+    "author": "Vexed Development Team",
+    "description": "Variety level pack",
+    "levels": 60,
+    "group": "variety",
+    "order": 109
+  },
+  {
+    "id": "variety-10-pack",
+    "title": "Variety 10 Pack",
+    "author": "Vexed Development Team",
+    "description": "Variety level pack",
+    "levels": 60,
+    "group": "variety",
+    "order": 110
+  },
+  {
+    "id": "variety-11-pack",
+    "title": "Variety 11 Pack",
+    "author": "Vexed Development Team",
+    "description": "Variety level pack",
+    "levels": 60,
+    "group": "variety",
+    "order": 111
+  },
+  {
+    "id": "variety-12-pack",
+    "title": "Variety 12 Pack",
+    "author": "Vexed Development Team",
+    "description": "Variety level pack",
+    "levels": 60,
+    "group": "variety",
+    "order": 112
+  },
+  {
+    "id": "variety-13-pack",
+    "title": "Variety 13 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 113
+  },
+  {
+    "id": "variety-14-pack",
+    "title": "Variety 14 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 114
+  },
+  {
+    "id": "variety-15-pack",
+    "title": "Variety 15 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 115
+  },
+  {
+    "id": "variety-16-pack",
+    "title": "Variety 16 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 116
+  },
+  {
+    "id": "variety-17-pack",
+    "title": "Variety 17 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 117
+  },
+  {
+    "id": "variety-18-pack",
+    "title": "Variety 18 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 118
+  },
+  {
+    "id": "variety-19-pack",
+    "title": "Variety 19 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 119
+  },
+  {
+    "id": "variety-20-pack",
+    "title": "Variety 20 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 120
+  },
+  {
+    "id": "variety-21-pack",
+    "title": "Variety 21 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 121
+  },
+  {
+    "id": "variety-22-pack",
+    "title": "Variety 22 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 122
+  },
+  {
+    "id": "variety-23-pack",
+    "title": "Variety 23 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 123
+  },
+  {
+    "id": "variety-24-pack",
+    "title": "Variety 24 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 124
+  },
+  {
+    "id": "variety-25-pack",
+    "title": "Variety 25 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 125
+  },
+  {
+    "id": "variety-26-pack",
+    "title": "Variety 26 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 126
+  },
+  {
+    "id": "variety-27-pack",
+    "title": "Variety 27 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 8,
+    "group": "variety",
+    "order": 127
+  },
+  {
+    "id": "variety-28-pack",
+    "title": "Variety 28 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 128
+  },
+  {
+    "id": "variety-29-pack",
+    "title": "Variety 29 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 129
+  },
+  {
+    "id": "variety-30-pack",
+    "title": "Variety 30 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 130
+  },
+  {
+    "id": "variety-31-pack",
+    "title": "Variety 31 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 131
+  },
+  {
+    "id": "variety-32-pack",
+    "title": "Variety 32 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 132
+  },
+  {
+    "id": "variety-33-pack",
+    "title": "Variety 33 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 133
+  },
+  {
+    "id": "variety-34-pack",
+    "title": "Variety 34 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 134
+  },
+  {
+    "id": "variety-35-pack",
+    "title": "Variety 35 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 135
+  },
+  {
+    "id": "variety-36-pack",
+    "title": "Variety 36 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 136
+  },
+  {
+    "id": "variety-37-pack",
+    "title": "Variety 37 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 137
+  },
+  {
+    "id": "variety-38-pack",
+    "title": "Variety 38 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 138
+  },
+  {
+    "id": "variety-39-pack",
+    "title": "Variety 39 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 139
+  },
+  {
+    "id": "variety-40-pack",
+    "title": "Variety 40 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 140
+  },
+  {
+    "id": "variety-41-pack",
+    "title": "Variety 41 Pack",
+    "author": "Vexed Development Team",
+    "description": "",
+    "levels": 60,
+    "group": "variety",
+    "order": 141
+  }
+]

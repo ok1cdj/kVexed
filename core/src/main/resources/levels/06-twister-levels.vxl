@@ -1,0 +1,37 @@
+# Author: Vexed Development Team
+# URL: http://vexed.sourceforge.net
+# Description: Difficult. Many of these levels have twists that add challenge.
+0;Tornado;10/4~~f3/4~2g2/1~e1~1~e2/1~2~1~3/1~2~~~3/1~~~e~~gf1/10;GbFbHgGgeFfFgGCdbGfGeGcGgGfGdGhGgGeGHdHdgG
+1;Helm Wind;10/1~b2b~1g1/1~3g~~a1/1~4~~2/1~g~2~~2/1~1~~~~~2/1~~~~a1~2/10;CbfBGfbGcGcEFgdFeFfFgFIcHfGfFfdGfCIc
+2;Solar Wind;10/10/10/6~b2/1b~c~~~3/2c2~~3/1~h~c~~h2/10;dECgeGcGfGdGeEHdbEcGdGeGbGcGdGeGfG
+3;Puelche;10/10/10/1e~c~5/1f~1~5/2~1~c4/1~~~~e~ef1/10;dDFfFgEgDgCgHgGgFgEgbDbEcGdGeGfGgG
+4;Thermal;10/5~a3/1g~~~~4/4~~4/4~~4/1e2~~1e2/1a~~g~~g2/10;bCcCEgHgGgdCGbbGcGdGbGcGdGeGfG
+5;Chinook;10/1c~2h4/1h~1~b~3/2~1~1~3/2~1~1~3/2~~~~h3/2~1b~c3/10;fCFcEfDfbBcFdFeGGfFfGfEfbCeG
+6;Breath;10/10/10/10/4ca~3/1e~3~~2/1baec~~b~1/10;eGfGfEeEfEgFdGcGeGdGfGHfeGhGgGbFcGdGeGfGbGcGdGeGfGgG
+7;Samiel;10/1b~7/2~7/1d~7/2~7/2~~2~~a1/1ea~~de~b1/10;bDcFdGcGdGeGgGIfHfbGcGdGeGfGbBcGdGeGfGgG
+8;Gale;10/10/1a~3~g2/2~3~3/2~3~3/2~d1~~3/1h~g~h~ad1/10;bGDfdGfGHcGfcGdGeGbCcFdGeGfGcGdGeGfGgG
+9;Gust;10/10/10/10/1be~~2~g1/1g2~2~2/1a~~~e~ba1/10;cEdEbEcEdEeGfGbGcGdGeGfGgGIebGcGdGeGfG
+10;Calm;10/10/10/2e7/2f~6/3~1~f~a1/1ha~~~h~e1/10;cEGfdGcGdGeGgGIfHfbGcGdGeGfGcEdGeGfGgG
+11;Candelia;10/10/10/7f2/6~e~1/2h~~~~1e1/1gf~g~~~h1/10;hEEgcFdFeGfGgGdGcGeGdGfGHeGfbGcGdGeG
+12;Updraft;10/1b8/1ga~~g~3/5bg~2/7~2/7~a1/7~g1/10;fCcCdCeCfCgDIfbCcCdCeCfCgDbCcCdCeC
+13;Auster;10/3c6/3e~~e3/5~4/5~4/5~~~g1/1bg~~~~bc1/10;dCeCGcIfHfcGdGeGbGcGdGeGfGdCeCfGgG
+14;Haboob;10/3~c5/3~3f~1/2f~4~1/1dc~2b~~1/3~~2~~1/2b~~~d~~1/10;EbcEcEbEcEdFeGhCdGeGfGgGgEcGdGeGfG
+15;Tropical Cyclone;10/3g~3f1/4~2~g1/4~2~2/4~2~2/4~2~2/1bfe~e~~b1/10;dGdBIceGfGIccGdGeGfGbGcGdGeGfGgG
+16;Downdraft;10/10/10/10/1a~3g3/1g~3a~e1/1e~h~~h~2/10;dGeGbEcGdGeGbFcGdGeGIfbGcGdGeGfG
+17;Cyclone;10/10/7~g1/7~2/2e~~f1~2/2g~~2~2/1fb~~~e~b1/10;cEdGeGcFdGFecGEfDfIceGfGdGeGfGgG
+18;Tebbad;10/10/10/10/1ba~3h2/3~~~~bg1/1g~~~~hab1/10;HfGfHfFgEgcEdFeGfGbEDgIgHgGgFgcEbGcGdGeGfGgG
+19;Lake Breeze;10/10/1c~7/1d~7/2~7/2~~~1~cg1/1dgdb~~b2/10;eGfGbCcFdFeGfGdGcGeGdGfGeGgGIfHfHgGgFgEgbD
+20;Capful Of Wind;10/2f7/1~a~6/1~1~1~a~e1/1b~~~~1~2/1f~~3~2/2~~be~~b1/10;EgDgFgEgcCCcDfbEIddGeGfGIgHgGgFgcEGdFeEe
+21;Notus;10/4~a4/4~5/4~5/4~2a2/2g~~~~gh1/2e~~~hea1/10;HfGfHfGfIfHfcFHgfFdGcGdGeGGgFgEgIgHgGgFb
+22;Blustery;10/10/10/1g~4~d1/1a~c3~c1/2~a~2~a1/2~d~g~~2/10;DfDfbDcEdFIddGeGfGbEIfHgGgFgcEIfcGdGeGfG
+23;Zephyr;10/10/7~e1/7~g1/2g3~~2/2f~2~3/2ge~d~df1/10;fGIcHedGeGIdcGdGeGcFfGdGgGeGHecGdGeGfGgG
+24;Breeze;10/4e~4/1~b1f~4/1~3~4/1~2f~4/1~~h1~4/1~~f~e~bh1/10;eBeCfGdGeEDgCgCcbFcGdGeGfGbGcGdGeGfGgG
+25;Hurricane;10/4~g1~e1/1a~e~2~2/1c~4~2/2~4~2/1a~4~2/1e~~c~~~g1/10;bCbFbDcGIbHgGgFgEgDcFbEcDccGdGeGfGgG
+26;Levanter;10/7~d1/2c4~2/2d4~2/2a~~~1~2/3~b~c~2/1b~~ad1~~1/10;gFIbHfbGcGcEcEdEeEcEdEeFeFdFfFgFdG
+27;Boreas;10/1e~1~be3/2~~~2h~1/2~~4~1/2~~4~1/2~~3~~1/1~b~geh~g1/10;FbEchCIfGbFbEgDgbBCgFgEcbGcGdGeGfGgG
+28;Roaring Forties;10/4h~4/5~4/5~1e2/1a2~~~a2/1h~~~1~f2/1ef~~h~3/10;eBbFcFFeHfcGdGeGHebGcGdGeGHfbGcGdGeG
+29;Twister;10/4b~4/5~4/5~4/1c~a~~4/2~gch~hg1/1~~a2~1b1/10;dEeEDfEfDfFfEfFfCgDfEfbEHfIfHfGfFfEfcFdFbGeBfFgFhFeFfF
+30;Williwaw;10/10/3~e5/3e1af~2/3c~2~2/4~~1b~1/2fb~~~ac1/10;EchFHgGgFgdEeFIggDhFfGfDgDeGfGdGeGfGgGcGdGeGfGgG
+31;Trade Winds;10/1d4d~2/1b~3g~2/2~4~2/2~4~2/1f~~3f2/1g~eb~~e2/10;DgbCcFcGdGeGfGbFcGdGeGfGgBbCcGdGeGfGgCbGcGdGeGfG
+32;Polar Night Jets;10/1b~7/2~7/2~7/2~2~h1g1/1g~~~~1~a1/2ch~ab~c1/10;GeFfbBFgEgcFdFeGIfdGeGfGcGdGeGfGgGbFcGdGeGfGgG
+33;Elephanta;10/6~a2/6~3/6~3/2c~2~3/1ha~2~d2/1fd~~~chf1/10;cEdGeGHbcFdGeGHfcGdGeGbFcGdGeGfGbGcGdGeGfGgG
