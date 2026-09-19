@@ -19,7 +19,7 @@ permissions, no services.**
 - Classic Vexed on a fixed **10×8** board with eight block types. Move a block
   one cell left/right into an empty space; blocks fall; groups of ≥2 orthogonally
   adjacent same-type blocks clear simultaneously, which can chain.
-- Bundles the original **Vexed level packs** (48 packs, ~2800 puzzles), each with
+- Bundles the original **Vexed level packs** (48 packs, 2800 puzzles), each with
   a par derived from the shipped human solution — golf your move count against it.
 - **Unlimited undo**, restart, and a **hint** that reveals only the next move.
 - Resumes exactly where you left off after the app is killed.
@@ -30,8 +30,15 @@ permissions, no services.**
 
 - Game: **Vexed** by James McCombe (1999). Classic II and the colour version by
   Steve Haynal and Mark Ingebretson (2001).
-- Level data: **Vexed Development Team** / the SourceForge Vexed project,
-  release v2.2 (2006-06-17).
+- Level data comes **solely** from the SourceForge **Vexed v2.2** distribution
+  (2006-06-17), by the **Vexed Development Team**. That release bundles exactly
+  **48 packs** — 9 canonical (Classic, Classic II, Variety, Variety II,
+  Children's, Twister, Confusion, Panic, Impossible) plus Variety 3–41 — which is
+  the complete set kVexed ships. After de-duplicating identical boards across
+  packs, that's **2800** unique puzzles.
+- One shipped solution (Classic II / *Greensboro*) was corrupt in the source; it
+  was replaced with a solver-found solution (`tools/solve.py`) rather than
+  dropped. Every such case is recorded in [`tools/known-bad.md`](tools/known-bad.md).
 - Board/solution encoding: the **VXL** text format from
   [`dlvoy/flipper-zero-vexed`](https://github.com/dlvoy/flipper-zero-vexed), kept
   deliberately so custom packs stay portable between implementations.
@@ -40,15 +47,27 @@ permissions, no services.**
 
 The bundled levels in `core/src/main/resources/levels/` are generated (and
 committed) — the converter never runs at build time. To regenerate from the
-original Palm `.pdb` packs:
+original Palm `.pdb` packs (kept in `tools/.cache/`, git-ignored):
 
 ```bash
-python3 tools/pdb2vxl.py <dir-with-pdb> -o core/src/main/resources/levels
+python3 tools/pdb2vxl.py tools/.cache -o core/src/main/resources/levels
 ```
 
-The converter verifies **every** bundled solution against a reference engine,
-deduplicates identical boards across packs, and drops (with a report) any level
-whose shipped solution does not solve the board.
+The converter verifies **every** shipped solution against the reference engine
+and deduplicates identical boards across packs. A level whose shipped solution
+fails verification is **never dropped silently**: it is printed, recorded in
+`tools/known-bad.md`, and either replaced from `tools/solution-overrides.json`
+(a solver-found solution, re-verified) or dropped-with-record. The run aborts
+only on structural PDB errors.
+
+`tools/solve.py` is a forward search solver (reusing the same engine) used to
+find replacement and best-known solutions:
+
+```bash
+python3 tools/solve.py --pack core/src/main/resources/levels/01-classic-levels.vxl --level 0
+python3 tools/solve.py --board "10/…/10" --max-depth 20
+python3 tools/solve.py --selftest      # solves 5 Classic levels within par
+```
 
 ## Build & install
 
@@ -115,7 +134,7 @@ app/   (Android, depends on :core)
   data/ProgressStore  DataStore Preferences, hand-serialized JSON
 ```
 
-The engine lives in a **pure JVM module** so its ~2800-solution oracle runs as a
+The engine lives in a **pure JVM module** so its 2800-solution oracle runs as a
 plain `./gradlew :core:test` — no emulator, no Robolectric — and so the compiler
 guarantees the game logic never touches an Android API.
 

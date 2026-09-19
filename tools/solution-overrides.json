@@ -1,0 +1,4 @@
+{
+  "_comment": "Replacement solutions for levels whose shipped solution string is corrupt. Keyed by the board string (stable across pack reordering). Each override is re-verified by pdb2vxl.py against the reference engine before use, and recorded in known-bad.md. See tools/solve.py for how replacements are found.",
+  "10/1~~gf~f~d1/1g~1e~1~f1/1aedf~~~g1/1gbhb~fa2/1ahf1~dec1/1efeb~cdb1/10": "IbHdGdeBeDGfeGHfGfIcHeIdHeGeeDfDdDeDfDgDdBeDcDdDeDbDcDdDCeDeGbHfGfIffGIgEeDfbGbFbGFgEe"
+}

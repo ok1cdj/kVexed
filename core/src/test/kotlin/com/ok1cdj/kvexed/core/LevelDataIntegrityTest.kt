@@ -72,4 +72,34 @@ class LevelDataIntegrityTest {
             "canonical order must be 1..9, was ${canonical.map { it.order }.sorted()}"
         }
     }
+
+    // index.json is the single source of truth for counts — these tests check
+    // CONSISTENCY, never a hard-coded expected number of levels.
+    @Test
+    fun everyPackIsNonEmptyWithContiguousLevelNumbers() {
+        val failures = mutableListOf<String>()
+        for (info in index) {
+            val body = readResource("/levels/${info.id}.vxl")
+            val numbers = body.lineSequence()
+                .filter { it.isNotEmpty() && !it.startsWith("#") }
+                .map { it.substringBefore(';').toInt() }
+                .toList()
+            if (numbers.isEmpty()) failures += "${info.id}: pack has no levels"
+            // level numbers must be 0,1,2,…,N-1 with no holes and no reordering
+            if (numbers != numbers.indices.toList()) {
+                failures += "${info.id}: level numbers not contiguous from 0: $numbers"
+            }
+        }
+        assertTrue(failures.isEmpty()) { failures.joinToString("\n") }
+    }
+
+    @Test
+    fun packIdsAreUnique() {
+        val dupes = index.groupingBy { it.id }.eachCount().filterValues { it > 1 }.keys
+        assertTrue(dupes.isEmpty()) { "duplicate pack ids in index.json: $dupes" }
+    }
+
+    private fun readResource(path: String): String =
+        (javaClass.getResourceAsStream(path) ?: error("missing resource $path"))
+            .bufferedReader(Charsets.UTF_8).use { it.readText() }
 }
