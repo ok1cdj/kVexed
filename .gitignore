@@ -1,0 +1,25 @@
+# Secrets & signing — NEVER commit
+local.properties
+keystore/
+*.jks
+*.keystore
+
+# Build output
+.gradle/
+build/
+app/build/
+core/build/
+captures/
+kvexed-*.apk
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+.DS_Store
+*.log
+
+# Downloaded Palm .pdb packs for tools/pdb2vxl.py (generated VXL output is committed)
+tools/.cache/
+
+# Original upstream Vexed distribution used only to regenerate level data
+tmp/

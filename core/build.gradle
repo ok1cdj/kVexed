@@ -1,0 +1,34 @@
+// Pure Kotlin/JVM module — the game engine and level data. It must NOT depend on
+// any Android API, which is enforced structurally: this is a kotlin.jvm module,
+// so android.* simply isn't on the classpath. Tests run as plain `:core:test`
+// (no emulator, no Robolectric).
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+// Target JVM 17 bytecode (matches :app) while running on whatever JDK 17+ is
+// installed — no toolchain provisioning, same as the app module.
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
+}

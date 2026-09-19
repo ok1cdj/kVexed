@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">kVexed</string>
+
+    <!-- Navigation / screens -->
+    <string name="packs_title">Vexed</string>
+    <string name="continue_game">Continue</string>
+    <string name="back">Back</string>
+
+    <!-- Pack groups -->
+    <string name="group_variety">Variety 03–41</string>
+
+    <!-- Game controls -->
+    <string name="undo">Undo</string>
+    <string name="restart">Restart</string>
+    <string name="hint">Hint</string>
+    <string name="next_level">Next</string>
+
+    <!-- Status -->
+    <string name="moves_par">Moves %1$d · Par %2$d</string>
+    <string name="solved_message">Solved in %1$d moves (par %2$d)</string>
+    <string name="stuck_message">Stuck — undo or restart.</string>
+
+    <!-- About dialog -->
+    <string name="about">About</string>
+    <string name="about_title">kVexed</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_author">by Ondřej Koloničný, OK1CDJ</string>
+    <string name="about_desc">Vexed, the classic sliding-block puzzle, for the Mudita Kompakt. Fully offline — no network, no permissions.</string>
+    <string name="about_license">License: GPL-2.0</string>
+    <string name="about_credits">Vexed by James McCombe (1999). Classic II &amp; colour version by Steve Haynal and Mark Ingebretson (2001). Level data: Vexed Development Team / SourceForge Vexed project v2.2. VXL format: dlvoy/flipper-zero-vexed.</string>
+    <string name="about_coffee">Buy me a coffee</string>
+    <string name="about_github">GitHub</string>
+    <string name="close">Close</string>
+</resources>
