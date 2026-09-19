@@ -4,12 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
@@ -52,10 +58,20 @@ private fun App() {
         Screen.PackList -> {} // default: exit the app
     }
 
-    when (val s = vm.screen) {
-        Screen.PackList -> PackListScreen(vm, onAbout = { showAbout = true })
-        is Screen.LevelList -> LevelListScreen(vm, s.packId)
-        is Screen.Game -> GameScreen(vm, onAbout = { showAbout = true })
+    // targetSdk 37 forces edge-to-edge, so inset the whole app below the status
+    // and navigation bars — otherwise the header (ⓘ, ‹ back) sits under the
+    // status bar, which swallows those taps.
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White)
+            .systemBarsPadding(),
+    ) {
+        when (val s = vm.screen) {
+            Screen.PackList -> PackListScreen(vm, onAbout = { showAbout = true })
+            is Screen.LevelList -> LevelListScreen(vm, s.packId)
+            is Screen.Game -> GameScreen(vm, onAbout = { showAbout = true })
+        }
     }
 
     if (showAbout) AboutDialog(onDismiss = { showAbout = false })

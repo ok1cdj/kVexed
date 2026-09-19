@@ -69,6 +69,9 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit) {
             IconTextButton(text = "ⓘ", onClick = onAbout)
         }
 
+        // Center the board vertically between the header and the controls.
+        Spacer(Modifier.weight(1f))
+
         // Board — one Canvas, one repaint per move.
         BoardCanvas(
             board = board,
