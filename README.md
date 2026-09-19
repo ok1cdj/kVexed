@@ -148,6 +148,5 @@ guarantees the game logic never touches an Android API.
 
 ## License
 
-kVexed is licensed under **GPL-2.0** — see [`LICENSE`](LICENSE). The rest of the
-"k" app family is GPL-3.0, but kVexed reuses level data from the original Vexed
-(GPL-2.0), which forbids relicensing to a later version, so kVexed stays GPL-2.0.
+kVexed is licensed under **GPL-2.0** — see [`LICENSE`](LICENSE).
+The original Vexed is GPL-2.0 without the 'or later' clause, so kVexed stays on version 2.
