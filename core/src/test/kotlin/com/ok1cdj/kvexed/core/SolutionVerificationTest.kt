@@ -33,15 +33,32 @@ class SolutionVerificationTest {
         }
     }
 
-    /** Returns null on success, or a human-readable reason on failure. */
-    private fun verify(level: Level): String? {
-        var board = level.toBoard()
-        val moves = try {
-            level.solutionMoves()
-        } catch (e: Exception) {
-            return "unparseable solution: ${e.message}"
+    /**
+     * Every best-known solution (the VXL 5th field) must also solve the level
+     * and be strictly shorter than par — otherwise it isn't "best known".
+     */
+    @TestFactory
+    fun bestKnownSolutionsAreValidAndShorter(): List<DynamicTest> = packs.map { pack ->
+        DynamicTest.dynamicTest(pack.title) {
+            val failures = pack.levels.mapIndexedNotNull { n, level ->
+                val best = level.bestKnown ?: return@mapIndexedNotNull null
+                val bestPar = level.bestPar!!
+                val reason = verify(level, level.bestKnownMoves()!!)
+                    ?: if (bestPar >= level.par) "best-known par $bestPar not shorter than par ${level.par}" else null
+                reason?.let { "$n/${level.title}: $it" }
+            }
+            assertTrue(failures.isEmpty()) {
+                "${failures.size} bad best-known in ${pack.id}:\n" + failures.joinToString("\n")
+            }
         }
+    }
 
+    /** Returns null on success, or a human-readable reason on failure. */
+    private fun verify(level: Level): String? =
+        verify(level, runCatching { level.solutionMoves() }.getOrElse { return "unparseable solution: ${it.message}" })
+
+    private fun verify(level: Level, moves: List<Move>): String? {
+        var board = level.toBoard()
         for ((k, m) in moves.withIndex()) {
             when (val r = Engine.move(board, m.x, m.y, m.dir)) {
                 is MoveResult.Illegal -> return "move $k (${m.x},${m.y},${m.dir}) is illegal"
@@ -52,7 +69,6 @@ class SolutionVerificationTest {
                 if (Engine.state(board) == GameState.LOST) return "dead state at move $k"
             }
         }
-
         if (!Engine.isWon(board)) return "${board.blockCount()} blocks left after the last move"
         return null
     }

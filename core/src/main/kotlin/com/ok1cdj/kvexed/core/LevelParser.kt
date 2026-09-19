@@ -52,12 +52,20 @@ object LevelParser {
                 }
                 continue
             }
-            // number;title;board;solution
+            // number;title;board;solution[;bestKnown]
             val parts = line.split(';')
-            require(parts.size == 4) { "${info.id}: malformed level line '$line'" }
-            val board = parts[2]
+            require(parts.size == 4 || parts.size == 5) { "${info.id}: malformed level line '$line'" }
             val solution = parts[3]
-            levels.add(Level(title = parts[1], board = board, solution = solution, par = solution.length / 2))
+            val bestKnown = parts.getOrNull(4)?.takeIf { it.isNotEmpty() }
+            levels.add(
+                Level(
+                    title = parts[1],
+                    board = parts[2],
+                    solution = solution,
+                    par = solution.length / 2,
+                    bestKnown = bestKnown,
+                )
+            )
         }
 
         return LevelPack(

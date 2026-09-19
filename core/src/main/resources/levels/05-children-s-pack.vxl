@@ -3,8 +3,8 @@
 # Description: Very easy levels meant for children.
 0;Coffee Truffle;10/10/10/6a~2/7~2/5fb~2/3e~efab1/10;dGgDgG
 1;Kahlua;10/10/10/5~d~a1/1h~1~~1~2/2~1~2~2/1h~d~d1a2/10;IdbEGdFe
-2;Butter Pecan;10/10/10/10/5~h3/2~c~e4/2cedhd3/10;DfGeFfeG
-3;Peppermint Shower;10/3~h5/3~6/3~6/3~b5/3~h~f3/3bdfd3/10;EbEfGfeG
+2;Butter Pecan;10/10/10/10/5~h3/2~c~e4/2cedhd3/10;DfGeFfeG;GeFfeG
+3;Peppermint Shower;10/3~h5/3~6/3~6/3~b5/3~h~f3/3bdfd3/10;EbEfGfeG;EbGfeG
 4;Macadamia Crunch;10/10/10/10/10/2~c1~h3/1c~gh~g3/10;DfGfdGeG
 5;Tin Roof Sundae;10/6~g2/1d~2a~1h1/2~3~~a1/2~1~e~~h1/2~1e1~~2/1d~3~g2/10;HbbCIdfCFe
 6;Rum Raisin;10/3~c5/3~6/3~1e4/3e~g1f~1/2~h~d2~1/1h~c~gd1f1/10;FedEhEDfEb
@@ -30,7 +30,7 @@
 26;Ginger Shower;10/2~~a5/2~7/2~a6/10/4d~~3/2f~f1~d2/10;EbDbeFfFcG
 27;Peppermint Stick;10/10/6~f2/6~3/5a~1b1/5f~~a1/5b~~f1/10;fEIfIffGIgHc
 28;Marble Fudge;10/7f~1/8~1/4d2c~1/4e~2~1/5~2~1/1h~~hedcf1/10;hBhDeEeEbGcG
-29;Toasted Almond;10/7~f1/7~2/4~a1~2/4~2~2/4a2~f1/2c~cb~~b1/10;FdcGIbIffGgG
+29;Toasted Almond;10/7~f1/7~2/4~a1~2/4~2~2/4a2~f1/2c~cb~~b1/10;FdcGIbIffGgG;FdcGfGgGIb
 30;Brandied Peach;10/10/5c~3/6~d2/6~3/6~3/2c~~d~dc1/10;HdcGdGeGIgfC
 31;Chocolate Mint;10/4c~4/5~4/5~1e~1/3d~g1g~1/4~a~a~1/2h~hdc1e1/10;hDfFfFcGdEeB
 32;Coconut Almond;10/4c~4/5~4/5~1h2/4de~a2/2~~ch~3/2d1ea~c2/10;HeHeEfDfHgeB

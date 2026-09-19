@@ -1,30 +1,30 @@
 # Author: Vexed Development Team
 # URL: http://vexed.sourceforge.net
 # Description: 
-0;Lone Ranger;10/4e~4/5~4/5~4/1b~2~1~g1/2~~c~~~c1/1bg~1~fef1/10;bEcGIeeFHfGfFfEfeBfFgFgGfGgG
-1;Mork & Mindy;10/10/10/4~g4/3~e5/1hf~g~~e2/1f1~ch~c2/10;FdEfcFEeeFdFbFfGeFHfEgcFdFFfGfEfeGDfCfdGeGfG
+0;Lone Ranger;10/4e~4/5~4/5~4/1b~2~1~g1/2~~c~~~c1/1bg~1~fef1/10;bEcGIeeFHfGfFfEfeBfFgFgGfGgG;bEIeeFHfGfeBFfEffFgFgGfGgG
+1;Mork & Mindy;10/10/10/4~g4/3~e5/1hf~g~~e2/1f1~ch~c2/10;FdEfcFEeeFdFbFfGeFHfEgcFdFFfGfEfeGDfCfdGeGfG;EgcFbFeFdFFdcFfGeFdFFfEfDfCfHfGfeGdGeGfG
 2;Marcus Welby;10/1h1~g5/1a~~6/2~~6/2~~6/2~c~~~hb1/3gb1~ac1/10;dFeFfFHfGfFfEfIfHfGfFfbCdFcFEbdFbCeFcFfFgFgG
-3;One Day At A Time;10/4cb~e2/3~bd~3/3~1e~3/3~2~~g1/1~~~2~~2/1d1~g~c~2/10;fBeBfBgFIeHfeGHbEcFcfDEcDfCfdGeGfG
+3;One Day At A Time;10/4cb~e2/3~bd~3/3~1e~3/3~2~~g1/1~~~2~~2/1d1~g~c~2/10;fBeBfBgFIeHfeGHbEcFcfDEcDfCfdGeGfG;gGIeHfeGfBeBfBGgHbEcFcfDEcDfCfdG
 4;HillStreet Blues;10/7~g1/7~2/2~f2d~2/2~a~~1~h1/2~1d~a~2/2f1gh1~2/10;DddEeEeFfFgFIeHfGfIbgDHfGf
 5;Rawhide;10/1h~7/2~7/2e7/1~b~~g~3/1~1~b1~3/1g1edh~d2/10;fGeGcEcEdEFeEeDeCebBcEdEeEfEfGeGdG
-6;Golden Girls;10/10/6~cf1/4~~~dg1/4~1~3/1~~~~1c~~1/1g1~~dhfh1/10;HcIcHdHdIdHdGdgFhFgFFgEgGgFgFdEfDfCfeGfGgGdGeGfGgG
+6;Golden Girls;10/10/6~cf1/4~~~dg1/4~1~3/1~~~~1c~~1/1g1~~dhfh1/10;HcIcHdHdIdHdGdgFhFgFFgEgGgFgFdEfDfCfeGfGgGdGeGfGgG;HcIcFgEgGgFgHgHdHdIdHdGdFdEfDfCfeGdGIggFfGeGfG
 7;Barnaby Jones;10/3e~5/1~h1~5/1~2~2~h1/1~b~~2~f1/1~1c~~~~2/1~efb1~~c1/10;IdIedFeFfFHfGfFfEfdBCgCeCcbEEfcEdFbGeFfFgFgGbGcG
 8;X-Files;10/10/2b~3~e1/3~3~2/3~3~2/2he~d~~2/2dchcb~2/10;dFcFfFeFdFdGGfFfcGgGIcHfcCdGeGfG
 9;Night Court;10/10/4c5/3~g~1~e1/2~~1~~~2/1f~~~~hc2/1e~~1gfh2/10;eDIdHeGfGfFfEfHfGfFfEfDfbFcFEdDedFbGeFfFfG
-10;Three's Company;10/1a~b~~c3/1h~1~~4/2~~~~4/3~~~4/1~~~~~h3/1c1~~dbda1/10;GfFfdBeFfFGbFffGbBcDEfDfCfbCcDdFdGeGfGgG
+10;Three's Company;10/1a~b~~c3/1h~1~~4/2~~~~4/3~~~4/1~~~~~h3/1c1~~dbda1/10;GfFfdBeFfFGbFffGbBcDEfDfCfbCcDdFdGeGfGgG;bBcDdGGfFfdBeEGbFefFfGbCcDEeDfCfeGfGgG
 11;The Cosby Show;10/3~e5/1c~~6/1d~~3~d1/2~~3~c1/2~e~~1~b1/2~d1bd~2/10;IdIffGDgbCbDcFEbdFeFIffG
 12;Dennis The Menace;10/10/10/1b~~c5/2a~6/2d~~e~1e1/2cad1~~b1/10;cEFfcGEfDfbDcEdFeFfFgGcFEddFeFcGfFgG
 13;Alfred Hitchcock;10/10/10/1h1~~b4/1g~~1g~3/2h~~1~3/1hb~b~~~2/10;FdbEeGfGfEgGGgFgEgcFHgGgFgdFcFEdEgbE
 14;Dragnet;10/5g4/3~af4/1d1~h5/1a1~6/1h~~6/1g1~~fd3/10;EcEdbFbFcFFcEddGFcbFcFEdDfCfdGeG
 15;Hazel;10/7h2/1c~3~b2/2~3~3/2~1d1~3/1h~~h~~3/2~dcb~3/10;HcbCbFeGcFeFfGHcGfdFdGcGdGeG
 16;Third Rock;10/10/1b~1e1~f2/2~1d~~3/2~2~~3/2~~~d~1b1/1ef~e1~~e1/10;eDeDfFgGcGbGbCcFdFeFfFHcGfgGFfEfcG
-17;The Simpsons;10/2e~~e4/1~a~~1~f2/1~1~~1~3/1~h~~f~3/1~a~~g~3/1g1~~1h~~1/10;cBFeFfEfcECcDfCfdFFbEeeFgGhGfFHcGfFfgG
+17;The Simpsons;10/2e~~e4/1~a~~1~f2/1~1~~1~3/1~h~~f~3/1~a~~g~3/1g1~~1h~~1/10;cBFeFfEfcECcDfCfdFFbEeeFgGhGfFHcGfFfgG;cBFeFfEfcECcFbdEDfCfHcGfeEfEEfFf
 18;Matlock;10/1e8/1g~7/1a~7/2~3~f2/2~~~~gh2/2e~1hfa2/10;HeGfFfHfbDbCEfcFdFbDeFfG
 19;Odd Couple;10/6d3/5~a3/5~2f1/4~~1~b1/2f1~~d~a1/2d~~a1b2/10;GfGcIfHfFfIeHfIfeGGfGccGFecGdG
-20;The Brady Bunch;10/10/10/8b1/2e2~c~e1/2h~~~1~2/3c1hebe1/10;cFdFeFIeGgHgcFdFeFGgGeFfEfIefG
+20;The Brady Bunch;10/10/10/8b1/2e2~c~e1/2h~~~1~2/3c1hebe1/10;cFdFeFIeGgHgcFdFeFGgGeFfEfIefG;IecFdFcFeFdFeFHgGgGeIeFfEffG
 21;Hogan's Heroes;10/7~e1/7~2/7~2/3d~2~f1/1a~f~~~~d1/2~1~ceca1/10;dEIfHfGfFfIfIbHfGfHfDfbFcFdFFffGEfDfeGfGgG
 22;Frasier;10/1f~c~5/1h~1~~4/2~2~4/2~~1~1~c1/2~~g~~~2/1dg~fd1~h1/10;bBbCEgcEdFcFeFcGfFgFdBeCIefFgFbGcGdG
-23;Route 66;10/6~a2/6~3/2~d2~3/2~ca~~3/1~dgf~~~2/2f3~gc1/10;DdeEdEeEDfCfEfDffEFfEfDfbFcFdFeFfFgFHbGfgGFfEfDf
+23;Route 66;10/6~a2/6~3/2~d2~3/2~ca~~3/1~dgf~~~2/2f3~gc1/10;DdeEdEeEDfCfEfDffEFfEfDfbFcFdFeFfFgFHbGfgGFfEfDf;eEHgfFeFdFgFfFeFdFgFfFeFfFHfHbGfFfEfDfgFgG
 24;Dobie Gillis;10/3~~e4/2dg6/2b7/2f~~5/2d~~~~1g1/2e~~1~bf1/10;cGcEcEdEdFeFfFcFdFeFfFgGDccFdFeFfFgGFbEbDccFcG
 25;Quantum Leap;10/1d~7/2~7/2~7/2~2~~ha1/2g~~ch3/1dc~~1ag2/10;FfGfFfEfcFdFeFfFHeGeFfEfcGbBIeHeGffF
 26;Family Affair;10/10/1d~4a~1/2~5~1/2~5~1/1d~ce3~1/1fefc3a1/10;bChCDfCfEfDfbGbGcG
@@ -34,29 +34,29 @@
 30;That Girl;10/2~d1~d3/2~2~4/2bf1~4/1~da1~4/1~1d~~4/1~f2a~b2/10;GbdFDbcDDeCedFeFdFeFfG
 31;Quincy;10/10/5~~a2/4~~ed2/1a~1~~g3/2~1~~4/1e~gd~g~e1/10;HcGgGcGeHdGdFdFebEcGdGbGcGdGIgHgGe
 32;St. Elsewhere;10/8g1/1d5~d1/1a~3~~2/1e~2~~3/2a2~~3/1eg~~g~3/10;bDbEcGIcIcfGHdHddGGebEcGdGeG
-33;Coach;10/4~g~c2/4~fd3/4~5/3~~~~3/3~1b~f2/2~cg1~db1/10;FbEeDgFceEfEHfHgfFgFHbGbFcEeGcFceEfF
+33;Coach;10/4~g~c2/4~fd3/4~5/3~~~~3/3~1b~f2/2~cg1~db1/10;FbEeDgFceEfEHfHgfFgFHbGbFcEeGcFceEfF;HbFcGbFbFcGceEFcEeEefEeEHffEfFgG
 34;Good Times;10/3c~1e~2/4~2~2/4~2~2/4~~b~2/1e~~~~h~f1/1bh~fc1~2/10;dBEgGebFcFGfFfdFeFfFgFIfgBHfGfFfEfcGbGcGdG
-35;Trapper John;10/10/3h~5/2f1~5/2ed~5/3f~~~c2/2~dc1eh2/10;HfGfFfDgcEdFcEdFeFfFdCeFfFcG
-36;Bionic Woman;10/3g2~c2/2~f~1~3/2~1~1~3/2~1~~~3/2~1h~~3/1fb~cbgh2/10;DccGdCeEfFeFfFfGHbGfdGeG
+35;Trapper John;10/10/3h~5/2f1~5/2ed~5/3f~~~c2/2~dc1eh2/10;HfGfFfDgcEdFcEdFeFfFdCeFfFcG;HfGfFfdGcEdEdCcEeFfFeFdFfF
+36;Bionic Woman;10/3g2~c2/2~f~1~3/2~1~1~3/2~1~~~3/2~1h~~3/1fb~cbgh2/10;DccGdCeEfFeFfFfGHbGfdGeG;DcdCeFfFHbeFGeFecGdG
 37;Cagney & Lacey;10/10/10/3~e1~e2/3~2~3/1f~a~c~3/1gcfg1a3/10;bFdFcFcGEfFfbGDfEfHdGfFfEfcFEddFeFfFcG
 38;The Rifleman;10/10/2ba~1~e2/4~~~g2/4~1~3/1g2~~a~2/1e~~~g1b2/10;dCHcHdGdGfFfcCGfFfdCeFfFgFbGcGbGcGFd
-39;The Lucy Show;10/5~bf2/5~1d~1/5~2~1/3~~~2~1/3bde~f~1/5d~e~1/10;GbFeEehFhChCIffGeFfFfG
+39;The Lucy Show;10/5~bf2/5~1d~1/5~2~1/3~~~2~1/3bde~f~1/5d~e~1/10;GbFeEehFhChCIffGeFfFfG;GbFehFhChCIffGeFfFfG
 40;Home Improvement;10/1h~f6/2~7/1~a7/1~8/1~f~~2d~1/1dg~~a~hg1/10;CdcGbFcFdFbBDbCdCdbFcFbFhFdFeGfGdGeGfGgGbGcGdGeGfGgG
-41;Family Matters;10/5f1~e1/5e~~2/4~b~~2/3~~1~~2/1g~~~b~~2/1df~d1~g2/10;IbfCHfbFFfEfcFdFFdEeFdEeeFfFbGcG
-42;Diagnosis, Murder;10/10/5~g3/2a~1~4/3~1~~h2/3~hbg3/2dbda4/10;GcfEfFHeGecDdFeFeGGfFfcGdG
+41;Family Matters;10/5f1~e1/5e~~2/4~b~~2/3~~1~~2/1g~~~b~~2/1df~d1~g2/10;IbfCHfbFFfEfcFdFFdEeFdEeeFfFbGcG;bFFfEfcFdFFdEeeFfFIbfDFdEfbGcG
+42;Diagnosis, Murder;10/10/5~g3/2a~1~4/3~1~~h2/3~hbg3/2dbda4/10;GcfEfFHeGecDdFeFeGGfFfcGdG;GcfEfFHeGeGfFfEfcGcDdG
 43;Dallas;10/10/1a~7/2~2~h3/1c~~~~4/1ge~a~1~h1/1e1g1~c~2/10;bEEfcEdEeFGddFcFbFeFdFcFbCcFEfDfCfFfEfIffG
 44;Doctor Kildare;10/2a~~a4/3~~2~h1/4~2~2/4~1~~f1/2f~~~~h2/2g~~f~ag1/10;FgHgGgHgIgIcIeHeGfHfFbEfcFdFcBdCcGdGeGfG
 45;The Wonder Years;10/10/10/5~h3/2~fea4/2~1df4/2h~ea~d2/10;DeEeEgFfeGfGdEeGGdFfcGcGdG
 46;NYPD Blue;10/10/6d~~1/5~h1~1/5~1~~1/1h~b~~fde1/1f~e~~1b2/10;gChCIeGfIfHfFgdFDgbFcFEfeGGfFfdFeFfFgFGdFfEfcGbGcGdG
 47;Twilght Zone;10/10/1c~b~5/2~1~g4/2~~~a1a2/1b~~~1~c2/2c~~gb3/10;bFcFFgFeFeEfDfGgdCbCHfGgFgcEHfcGdGeG
-48;Part Of Five;10/10/4~c4/4~5/1~a~~d2e1/1~1~~1~~f1/1d1~e~fca1/10;EgcEGgFgFcFeEeDeCeIfHfeGeGfGdFeGfGgGdGeGfGgG
+48;Part Of Five;10/10/4~c4/4~5/1~a~~d2e1/1~1~~1~~f1/1d1~e~fca1/10;EgcEGgFgFcFeEeDeCeIfHfeGeGfGdFeGfGgGdGeGfGgG;IfHfIfHfeGHgGgFgEgcEIgHgGgFgFcFeEeDeCeeGdG
 49;Outer Limits;10/3~~ha3/3~6/3~~f~3/1e~~~1~~~1/1a~fh~~1~1/2~1ef~1f1/10;FbEbGbFbEbdDfGeGdEeFfFfDgEhEdFGfFfEfDfbEcFbFdFeFeG
 50;Empty Nest;10/4~d1h2/4~a~b~1/4~1~1~1/4~d~1~1/3~hf~1~1/3~f1ab~1/10;FbhCEfFfHcfCGfFf
 51;Here's Lucy;10/10/3c6/3h~5/4e5/2g~d~d~2/3e1cg~h1/10;eFcFeFdFfFeFIggFfFdDeFfGHfGfFfEfdDeFfFfG
 52;Adam-12;10/4~c4/4~5/1e~1~5/2~~~5/1~d~f~~h2/1fch1~de2/10;bDEfcEdECfDfeFHfGfFfEfcFbFcFdFeFfFfGFbEfDfbG
 53;Growing Pains;10/1a~3f~2/2~4~2/2~4~2/2~3b~~1/1h~~~~da2/2d~~b1fh1/10;gEhEbFbBGfFfHfGfFfEfcFdFcFeFcGfFgFIeHeGfgBHfgF
-54;Seinfeld;10/2b~6/2g~6/1c1~6/1d~~~d~3/1e~~c1~3/2~e1b~~g1/10;bFbEFecGEecBdEeEfEcCdEbFDfeEEffEgG
-55;Mannix;10/10/10/2b1d~4/2g~a~4/3g1~~~2/3c~bcda1/10;cEeDfFgFEecEdEeEdGeGdGeGfGgG
+54;Seinfeld;10/2b~6/2g~6/1c1~6/1d~~~d~3/1e~~c1~3/2~e1b~~g1/10;bFbEFecGEecBdEeEfEcCdEbFDfeEEffEgG;EfcBFedEeEfEcCdEbFbEeEfEgGbFEf
+55;Mannix;10/10/10/2b1d~4/2g~a~4/3g1~~~2/3c~bcda1/10;cEeDfFgFEecEdEeEdGeGdGeGfGgG;eDcEEecEdEeEfFdGeGdGeGfGgG
 56;Star Trek;10/10/5~h3/4~~1a~1/3~~cf1~1/2~~f2~~1/1h~dac~~d1/10;GcFdEeDfFeEeGeFedFDgEghDIfdGeGfGcGdGeGfGgG
 57;Falcon Crest;10/1~g7/1~3a~3/1~~3~3/1d~3~3/1a~f~~~~f1/2~dg1~f2/10;fCdFeFfFgFCbbDbFcFbFdFcFeFfFcG
 58;Alice;10/2b2c~3/2d~2~3/3~2~3/3~2~3/3~~~h~h1/1e~ecd1~b1/10;bGgFIfcCcCdFeFfFgFfBGfFfdG

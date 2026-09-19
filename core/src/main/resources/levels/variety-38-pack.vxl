@@ -4,18 +4,18 @@
 0;Oh Baby;10/10/6~f2/2e~2~1h1/3~2~~f1/1~~h~~~~d1/1hd1~e~~h1/10;DfCfIeIefGHcGfHfGfFfIfHfGfFfEfDfcDdFeFfFfGeGfGgG
 1;Confessin';10/7h2/2~a3a2/2~3~b2/2~2~~3/2~c~~4/2~1c~hb2/10;dFHdHdGgGeGeFgFffGDcEfDfHdGe
 2;The Next Goodbye;10/5hc~2/7~2/7~2/1c4~~f1/1h~c~~~~2/2c1fhf~~1/10;bFdFcFbFeFdFfFgGgBfBgBHeeFhGeGfGIe
-3;Tie You Up;10/2e~6/3~3a2/3~2~b2/3~2~3/2~f~h~1f1/1a~he1~~b1/10;HdgGFfbGDfEfEgcFcBIgHgHdGfFfdFeFfFcG
+3;Tie You Up;10/2e~6/3~3a2/3~2~b2/3~2~3/2~f~h~1f1/1a~he1~~b1/10;HdgGFfbGDfEfEgcFcBIgHgHdGfFfdFeFfFcG;HdHdFfGfbGDfEfFfEgcFcBdFeFfFcGgGgG
 4;Empty Heart;10/1f~7/1c~3~b2/2~3~3/2~c1~~3/2~gfg~3/2~b1h~~h1/10;fGeFdFfFeFDfbBbCcFHcdFeFGeFfgGEf
 5;Hot Stuff;10/6~e2/2g~2~a2/3~2~3/1h1~2~~h1/1e~~~~~~a1/2~h~ga~2/10;HbgGIeHfHcgEcCbFbFGfdGcFdFdGcGdGeG
 6;Worried About You;10/1~g2c~d2/1~4~3/1~4~3/1c~1c1~~g1/1b~~b~~~2/3b1~~d2/10;bFcFCbbEEfcFdFeFHgfBHbGfIeFffGbFcF
 7;Rolling Stone;10/6f~f1/2b~3~2/3~3~2/2de~1~~2/3f~~f~~1/3e~2db1/10;gBcCdGdEcEdEeFfFeFdFgFIbfFHehFgFGfFf
-8;Satisfaction;10/10/10/2~~d1~e2/1e~ah~~3/2bdb~~~2/2h2a~~2/10;EdbEDdeEdEcEeEdEcEHdfEeEcFfEgFFffGEfDf
+8;Satisfaction;10/10/10/2~~d1~e2/1e~ah~~3/2bdb~~~2/2h2a~~2/10;EdbEDdeEdEcEeEdEcEHdfEeEcFfEgFFffGEfDf;EdHdbEDdeEdEcEeEdEcEfEeEfEcFFfEfDfGf
 9;Better Move On;10/10/10/6~b2/5~~3/1g~~~h~~c1/1h1fcg~bf1/10;bFcFdFHgfFeFHdeGGeFfGfFfEfDfCfgGIfHfeGfGdGeGfGgG
 10;Had It With You;10/3c~a4/3a~5/2be~5/1~c1~e4/1~e~~1~b2/1~2a~~3/10;cFdFdDDdCfCfcFFbbFDdCecFdFHfeG
 11;Moonlight Mile;10/6~e2/6~1g1/3d2~~d1/2~b~1~~2/1~~e~~~~2/1bg1~a~~a1/10;DeCfdEdFeFfFIgIdIdHeHbGfFffGEfDfeGfG
 12;Mixed Emotions;10/10/1e~1~d4/1c~1~e4/2~1~5/1a~~~~~~d1/1ea~~e~1c1/10;bCbDcFcFbFFcdFbGFdeFIfHffFeFgFhFeG
 13;Ruby Tuesday;10/10/3h6/2~c~~d3/2~1~~b~2/1f~~~~ch2/1d~~~1bf2/10;GdgEFfGfFfHfGfHfEfDgbFDdEgcFFfdFbGdDeFfF
-14;Continental Drift;10/7~h1/3~d2~2/2c~2~~2/2d~~~~g2/1c1~1~~3/1g~~gh~3/10;IbHdEgEccDdEdGeGdGfGeGcEeEfFdGHebGcGdGGebGcGdGeG
+14;Continental Drift;10/7~h1/3~d2~2/2c~2~~2/2d~~~~g2/1c1~1~~3/1g~~gh~3/10;IbHdEgEccDdEdGeGdGfGeGcEeEfFdGHebGcGdGGebGcGdGeG;IbbGfGeGcGEccDdEcEeEfFHdGeHeGeFeDgFgEebGcGdGeG
 15;One Hit;10/7~h1/3h~2~d1/4~2~2/3d~2~b1/4~b~a2/1~~~~a1hd1/10;HfFgGfEgFgdCeFfFIbDgCgEgDgIgIeHfGfFfdEeFcGfFIcbGcGdG
 16;Fight;10/2h7/2b~6/3bh1~~g1/2d2~ad2/1~a~~~4/1g1~~~4/10;cCcCIdHdGeGecFcFdFFfEfDfCfHeGeFfdG
 17;Blinded By Love;10/6~f2/4f~~3/5~~3/5~~3/2~e~~ac2/2c1~heah1/10;GfFgdFeFfFHbHfGfeCfEFffGEfDfeGfGgG
@@ -25,39 +25,39 @@
 21;Silver Train;10/5b4/5a~~e1/4~e~3/4~1~3/1d~~~f~3/1fb~a1~d2/10;IcHcfDbFFfEfcFdFFdeFfFdGFdEfbGcG
 22;Backstreet Girl;10/1b~7/2~a6/2~7/2~~6/1d~~c~h~d1/1ha~2c~b1/10;GfcGEfFfbGDfbBEfcECfDfdFeFfFDgbFDcgGIfHfGfFfEfcFdFbGeFfFgFgG
 23;Not Fade Away;10/10/1e~7/2~7/1~g~f~d3/1~d~1~f~2/1e1~~~bgb1/10;bCGeFgEgEecECedEdGeGGfeEfEgFgGdGfGcFdGeG
-24;Beast Of Burden;10/10/2a~6/3c~5/3fa~~~g1/2~e1~~~2/1e~g1~c~f1/10;cCdDeEdDeEeEdEDffEeEfEIggFIeHeGeFeEehGgFfFfG
+24;Beast Of Burden;10/10/2a~6/3c~5/3fa~~~g1/2~e1~~~2/1e~g1~c~f1/10;cCdDeEdDeEeEdEDffEeEfEIggFIeHeGeFeEehGgFfFfG;cCeEdEdDeEeEdEDffEeEfEIggEIeHeGeFehGEefGgG
 25;Doo Doo Doo Doo;10/10/10/1b~c~5/2~1a~4/1f~~cfg~2/1a~~1g1~b1/10;EfEfFfGfeFDgbFDdbDcDcFdFbGdDeEfFeFgF
 26;Promotion Man;10/2e~6/2b~6/3~6/2h~4f1/3~~~~~e1/2behbf~2/10;gGIffGHfIfcEcBeGGfdGdFdGGgFgcC
-27;Saint Of Me;10/1f~7/1b~7/2~7/2~1~h4/2~~ag~~~1/2~hb1afg1/10;FefFgFhFeFfFDgbBbCEgcFdFcFeFfFcG
+27;Saint Of Me;10/1f~7/1b~7/2~7/2~1~h4/2~~ag~~~1/2~hb1afg1/10;FefFgFhFeFfFDgbBbCEgcFdFcFeFfFcG;FefFeFgFfFDgbBbCEgcFdFcFeFfFcG
 28;New Faces;10/1a~h1~b3/2~2~4/2~2~4/1~~~~~4/1ef~~~~~e1/1h1~ab1~f1/10;DbCeEgcFbFbBcEFgdEeFdFeFfFgFcFdFeFGbFefFgFdG
 29;No Use In Crying;10/3gf~4/5~4/5~~a2/5~df~1/4~~a1~1/3b~gb1d1/10;eBdBeBHdFgGeHefEFfgEhEGfdGeG
 30;Get A Witness?;10/10/10/3h3~f1/3a~2~2/1~cb~~~~2/1b1ahc1~f1/10;IddEeFdFfFeFdFcFdGFfEfDfCfGfFfdG
 31;Tell Me;10/10/10/1c~7/1f~~1f~c2/1be~~b~3/3f~1ef2/10;bDcEHefEgEFfdFeFbEcFdFcFeFfFHebFcF
 32;Play With Fire;10/10/1e~7/2~b~5/2~f~5/1~~h~~~~b1/1dfdh1~1e1/10;dDDfbCcEdECfDfEfeFdFbGIfHffFgFhFeFfFbGcG
 33;Sparks Will Fly;10/5e~1e1/6~~a1/6~d2/2ah~1~b2/2b1~~~3/1dh~~1~3/10;dEcGfBHeGfFfcGIcHdGfFfcGIcHeHeGfFfbGcG
-34;Got A Good Thing;10/5~f3/2g~1~g3/3~1~1b~1/3~1~2~1/1a~~~~~~~1/1befe~1a2/10;eGGbFfGcbFFfEgcFcCFgdFhDIfHfGfeFcGfFgFbGcGdG
-35;Moon Is Up;10/1c~7/2d~6/2e~6/3~~~c3/2h~~~1d~1/4e~~he1/10;cFdFeFGeFfhFfGcCcDdEIgHgeEbBcDdEdFeGfGgG
+34;Got A Good Thing;10/5~f3/2g~1~g3/3~1~1b~1/3~1~2~1/1a~~~~~~~1/1befe~1a2/10;eGGbFfGcbFFfEgcFcCFgdFhDIfHfGfeFcGfFgFbGcGdG;cChDbFdFcFIfHfGfGcdFeFGcfFFfEfgFcGbGcGdG
+35;Moon Is Up;10/1c~7/2d~6/2e~6/3~~~c3/2h~~~1d~1/4e~~he1/10;cFdFeFGeFfhFfGcCcDdEIgHgeEbBcDdEdFeGfGgG;bBcFcCcCdFcDdEeFdEhFfGIgHgeEGedFeGfGgG
 36;Wanna Hold You;10/10/10/10/10/1~a~~h~fd1/1~gfdgah2/10;CfFfEfDfHfGfFfEfIfHfGfFfCfcGdGbGcGdGeGbGcGdGeGfG
-37;Black Limousine;10/4~a4/4~5/4~5/4~~~ec1/2g~a~~1e1/1~ce1~~eg1/10;cFeFdFeFHgfFHeGeFfEfFbeFIeHeCgGgGfgGFfEfbGfGgG
+37;Black Limousine;10/4~a4/4~5/4~5/4~~~ec1/2g~a~~1e1/1~ce1~~eg1/10;cFeFdFeFHgfFHeGeFfEfFbeFIeHeCgGgGfgGFfEfbGfGgG;cFeFdFeFHgfFHeGeIeHeGeFfFbeEEfFfEfGggGfGgG
 38;Wild Horses;10/4~b4/4~1d~d1/4~2~b1/4~2~2/2~~~~~~f1/1d~1bd~fb1/10;gCHfHgGgIgHgIgIcIdHfGfHfFffGFbEfDf
-39;Summer Romance;10/4b~4/1d~2~4/2~1~~4/1h~1~5/1f~~~d~~c1/1c~bh1f~2/10;fFgFIfHfGfFfEfDgbFcFdFeFfFbCcFdFeFfFbFcFdFeBdGFdEfbGcG
+39;Summer Romance;10/4b~4/1d~2~4/2~1~~4/1h~1~5/1f~~~d~~c1/1c~bh1f~2/10;fFgFIfHfGfFfEfDgbFcFdFeFfFbCcFdFeFfFbFcFdFeBdGFdEfbGcG;DgbFEgcFfFgFIfHfGfFfdFeFfFbCcFbFdFcFeFfFeBFdEfbGcG
 40;Too Tough;10/1hc~h5/3~gh~3/3~2~3/3~~~~~e1/3~~1~~2/2eg1c~h2/10;EbEccBbBcBdEdEeEEffGfCfEgEIeHeGeGgfGFeEf
 41;Turd On The Run;10/7~c1/2h4~f1/2c~3~2/3~3~2/2gb~~~~2/2f1~bhg2/10;dFIbIccFdFHfGfHfGfFfEfDfcDdFeFcDdFeFeGfG
 42;Sing This;10/10/7h2/4~g1f~1/4~3~1/4d~g~~1/1cf~cd1~h1/10;eFhDhDgFIfHfeGGfFfFdeFcGfFgFbGcGdG
 43;Stray Cat Blues;10/10/2g7/1~f1~h4/1~b~~5/1~1~~h~~2/1~fg~1ebe1/10;CdcEcEFfdFFdeFfFgFgG
-44;Complicated;10/3f2~bh1/3b~1~e2/3e~1~bf1/4~~~3/2~~~~~3/2h1~~~3/10;HbdCHcHdGeIbdCdDHdeGGfFfEfDfIdHdGfeG
+44;Complicated;10/3f2~bh1/3b~1~e2/3e~1~bf1/4~~~3/2~~~~~3/2h1~~~3/10;HbdCHcHdGeIbdCdDHdeGGfFfEfDfIdHdGfeG;HbIbHbdDdCeGGfFfdDeEHdHdIdHdEfDfeG
 45;Luxury;10/1~a7/1~8/1~6f1/1~4~~g1/1~h~b~h~2/1~g~a~1fb1/10;GfeFfFEgcFdFCgCbbFgFIeHeIeGfHfgFbGcGdG
 46;Heartbreaker;10/10/3e~5/3c~~1~a1/3da~~~h1/3h1~~~2/4de~c~1/10;dCeDdDIdeEIefGeGeEdEeEfEHeGeFehGEefGgG
 47;Thru And Thru;10/4h3d1/2~~f2~c1/2~a3~2/2~3c~~1/2~h~2a~1/1f~1~~~d~1/10;IcEcDcIchEEcDfDdDdcFdFeGfG
-48;Angie;10/1~f7/1~2h5/1~1~b~4/1~h~1~~3/1~f~~~~c2/1cb1~e~e2/10;cEEdDeFgdFeFfGHfeGGfeDfECecFdFFffGCbEfDfbEcEdFcFbFDf
-49;One More Try;10/6~a2/2~b2~h2/2~1~~~d2/2~~d1~3/1~~~1~b3/1h1~~ah~h1/10;gGHbHdHdGdGfFdEeEeDfCfGfdGDccFdGeG
+48;Angie;10/1~f7/1~2h5/1~1~b~4/1~h~1~~3/1~f~~~~c2/1cb1~e~e2/10;cEEdDeFgdFeFfGHfeGGfeDfECecFdFFffGCbEfDfbEcEdFcFbFDf;cFEdDeCedFcFdFeFfFHfGfeDfEFffGCbEfDfbEcEdFcFbFDf
+49;One More Try;10/6~a2/2~b2~h2/2~1~~~d2/2~~d1~3/1~~~1~b3/1h1~~ah~h1/10;gGHbHdHdGdGfFdEeEeDfCfGfdGDccFdGeG;HbHdGdFdHdGdgGGfDcFdcFEeDfCfdGeG
 50;Let It Loose;10/1g~2~d3/2~2~1e~1/2~2~2~1/2~~~~2~1/3a~dfe~1/3f~1ag~1/10;FfdFeFhGgFfFbBcEdFeFGbFehCfFHfIfGfFfgG
-51;Think;10/7~c1/7~2/4~a~f2/4~1~he1/1a~~~~~e2/1c1~f~~h2/10;IbFdeFHgHdGfHfIeFffGHfbFcFEfGfDfCfdGeG
-52;You Can't Always;10/10/4~f4/3a~h~c2/4~1~3/1a~~e~~3/1fhc1~~e~1/10;dDeFeFhGfGHdGfgGFfEfFcbFEfcFdFeFFdEfDfbG
+51;Think;10/7~c1/7~2/4~a~f2/4~1~he1/1a~~~~~e2/1c1~f~~h2/10;IbFdeFHgHdGfHfIeFffGHfbFcFEfGfDfCfdGeG;IbHgHeEgGfHeGfHfIebFcFdFFfFdEfDfCfdG
+52;You Can't Always;10/10/4~f4/3a~h~c2/4~1~3/1a~~e~~3/1fhc1~~e~1/10;dDeFeFhGfGHdGfgGFfEfFcbFEfcFdFeFFdEfDfbG;eFhGfGHdbFcFdFeFGfgGFfEfFdEfdDeFFdEfbG
 53;Ventilator Blues;10/10/1a~5d1/2~2~c~f1/1a~1b~1~2/2~~f~~~2/2dc1~~b2/10;bCbEgDIdIdHdeEeFfFHfGfHfFfEfGdFfEffG
 54;It Must Be Hell;10/10/1d~7/2~7/2~1f~4/2~dce~~g1/2~fg1~ce1/10;fFIfHfGfeEDgEfFfbCFfdFcFeFcGfFgFgG
 55;Hey Negrita;10/1c2g~~~g1/1e~~d1~~2/2~~2~~2/2~~2~~2/2~~~b~~e1/1cb~~1~~d1/10;FfcGeBbCcGbGdGcGEcdFbCfBeFfFgGIfIbHfGfFfgG
-56;Prodigal Son;10/1bd~6/3~6/3~a~1~g1/3~1~~~2/2h~~ha~2/3g~1db2/10;cBFfdFeFgFfFbBcBdFcFeFdFeDIdfEfFHeGeFfGfHffF
+56;Prodigal Son;10/1bd~6/3~6/3~a~1~g1/3~1~~~2/2h~~ha~2/3g~1db2/10;cBFfdFeFgFfFbBcBdFcFeFdFeDIdfEfFHeGeFfGfHffF;IdcFEdcBbBcBdDFfGfeDdDdFdFHffEFfGfeDfEFf
 57;Country Honk;10/4c~4/5~4/3a1~h~2/3h~~1~2/3a~e~~b1/3eb1~~c1/10;FfdEEfeBfFeFfFgFIfgDHfGfFfgG
-58;It's All Over Now;10/7~b1/2~hd~g~f1/2~1b~1~2/2~2~1~2/2~1fd~~~1/2~g2~1h1/10;eDdCeCGcFcEcDcIbfFfFfFgFhFeDfFIceFfFHf
-59;Under Boardwalk;10/7g2/3~f1~c2/1h~~2~3/2~d~~~~2/1~~f~~~~2/1c~2hd~g1/10;HcHcgEGfFfdEeEfFDfEfDfCfbDcFEcDedFeF
+58;It's All Over Now;10/7~b1/2~hd~g~f1/2~1b~1~2/2~2~1~2/2~1fd~~~1/2~g2~1h1/10;eDdCeCGcFcEcDcIbfFfFfFgFhFeDfFIceFfFHf;eDdCeCGcFcEcDcIbfFfFfFgFhFIceFfFeDfF
+59;Under Boardwalk;10/7g2/3~f1~c2/1h~~2~3/2~d~~~~2/1~~f~~~~2/1c~2hd~g1/10;HcHcgEGfFfdEeEfFDfEfDfCfbDcFEcDedFeF;HcHcgEGfFfdEDfEfEcDfbDcECfdEeEDfeF

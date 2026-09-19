@@ -283,15 +283,25 @@ def slugify(name, group, order):
 # --------------------------------------------------------------------------
 
 OVERRIDES_PATH = Path(__file__).with_name("solution-overrides.json")
+BEST_KNOWN_PATH = Path(__file__).with_name("best-known.json")
 KNOWN_BAD_PATH = Path(__file__).with_name("known-bad.md")
 
 
-def load_overrides():
-    """board-string -> replacement solution (keys starting with '_' are comments)."""
-    if not OVERRIDES_PATH.exists():
+def _load_board_map(path):
+    """board-string -> solution (keys starting with '_' are comments)."""
+    if not path.exists():
         return {}
-    raw = json.loads(OVERRIDES_PATH.read_text(encoding="utf-8"))
+    raw = json.loads(path.read_text(encoding="utf-8"))
     return {k: v for k, v in raw.items() if not k.startswith("_")}
+
+
+def load_overrides():
+    return _load_board_map(OVERRIDES_PATH)
+
+
+def load_best_known():
+    """board-string -> a verified solution shorter than the shipped par."""
+    return _load_board_map(BEST_KNOWN_PATH)
 
 
 def write_known_bad(records):
@@ -439,6 +449,9 @@ def main():
 
     write_known_bad(bad)
 
+    best_known = load_best_known()
+    best_count = 0
+
     args.outdir.mkdir(parents=True, exist_ok=True)
     index = []
     for pack in packs:
@@ -448,7 +461,20 @@ def main():
             f"# Description: {pack['description']}",
         ]
         for n, lv in enumerate(pack["kept"]):
-            lines.append(f"{n};{lv['title']};{lv['board']};{lv['solution']}")
+            line = f"{n};{lv['title']};{lv['board']};{lv['solution']}"
+            # Optional 5th field: a best-known solution shorter than the shipped
+            # par. Re-verified here; only emitted if it still checks out and is
+            # actually shorter.
+            bk = best_known.get(lv["board"])
+            if bk:
+                try:
+                    bpar = verify(lv["board"], bk)
+                    if bpar < lv["par"]:
+                        line += f";{bk}"
+                        best_count += 1
+                except ValueError as e:
+                    print(f"WARN best-known for {pack['id']}/{lv['title']} failed: {e}")
+            lines.append(line)
         (args.outdir / f"{pack['id']}.vxl").write_text("\n".join(lines) + "\n",
                                                        encoding="utf-8")
         index.append({
@@ -471,6 +497,7 @@ def main():
     print(f"replaced     {replaced}")
     print(f"dropped      {dropped}")
     print(f"levels out   {total_out}")
+    print(f"best-known   {best_count} (levels with a shorter-than-par solution)")
     print(f"verified     {total_out}/{total_out} solutions OK")
     print(f"written to   {args.outdir}")
     print(f"known-bad    {KNOWN_BAD_PATH} ({len(bad)} record(s))")

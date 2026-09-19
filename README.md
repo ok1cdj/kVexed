@@ -39,6 +39,10 @@ permissions, no services.**
 - One shipped solution (Classic II / *Greensboro*) was corrupt in the source; it
   was replaced with a solver-found solution (`tools/solve.py`) rather than
   dropped. Every such case is recorded in [`tools/known-bad.md`](tools/known-bad.md).
+- The shipped pars are human "memorize" solutions, not optimal. A solver sweep
+  (`tools/bestknown_sweep.py`) found a **shorter** solution for **792** levels;
+  these are stored in `tools/best-known.json` and emitted as an optional 5th VXL
+  field (`;bestKnown`), so the app can show a tighter target than par.
 - Board/solution encoding: the **VXL** text format from
   [`dlvoy/flipper-zero-vexed`](https://github.com/dlvoy/flipper-zero-vexed), kept
   deliberately so custom packs stay portable between implementations.

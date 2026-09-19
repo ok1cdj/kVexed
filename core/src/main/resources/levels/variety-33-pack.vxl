@@ -4,7 +4,7 @@
 0;Mara Skywalker;10/10/1g~7/2~1~g4/2~1~1~a2/2bc~~~f2/2a1cf~b2/10;dFcFdFfGHeeGGfHfbCcFdFFffGFdEfDf
 1;Sly Moore;10/3d~5/4~5/4~h~3/4~1~3/1f~~b~~h2/2~edfbe2/10;fDdBeFFgDgbFcFcGdGeGfG
 2;Ark Roose;10/3~d5/3~6/3~6/2~~6/1~a1~~~f2/1gdcfcag2/10;EbDeCfHfGfFfdGbFcGdGeGbGcGdGeGfG
-3;Depa Billaba;10/3b6/2~c~~4/2~g1~4/2~2~ha2/1~~~~~cb2/1a1~hg4/10;dCeCDcHeGecFFfEfDfCfGfFfDdcFdFHfGfdG
+3;Depa Billaba;10/3b6/2~c~~4/2~g1~4/2~2~ha2/1~~~~~cb2/1a1~hg4/10;dCeCDcHeGecFFfEfDfCfGfFfDdcFdFHfGfdG;dCeCdCHeGeeCfEFfGfDdcFEfFfDfCfdG
 4;Ysanne Isard;10/3e2e1a1/2~b~~a~d1/2~2~1~2/2~2~~~2/2~2~~~2/1b~1ea~d2/10;DcIcgCgCIcHedCHgeC
 5;Poggle The Lesser;10/2e~6/3~2h3/3~~eg~2/3~~2~2/3~~1d~~1/3bg~hbd1/10;cBFdGdFdgFhFgDHfdGeGfG
 6;Admiral Daala;10/4h~c3/5~4/5~~1c1/1b~2~~cd1/2~~~b~1h1/1d~~2~3/10;HeIeHeIeHeGeeBfDgEhEbEfEFfEfgEGfGbFfHeEfbG
@@ -13,12 +13,12 @@
 9;Jacen Solo;10/10/10/6~~h1/5~e~2/2dbd~h~b1/3d1~1e2/10;IfgEIdGfeFfFHdGedFeFGfHfFfcFGf
 10;Greedo;10/10/6ec~1/5~gh~1/5~2e1/4~~4/1cg~~ha~a1/10;gGhCgCGdFfcGhCHdGdIdHdGdbGcGdG
 11;Greeata;10/1a3h~3/1c4~~h1/1f~~2~~2/3~2~~2/3~1~f~2/1c~~~~cha1/10;fBGfIcbDcDdGbDbGGgFgcDbDcDdGeGfGgG
-12;Horox Ryyder;10/2~fd1~b2/2~3c3/2~1~~b~2/1~~~~2~2/1~1f~d1c2/1b2~b4/10;GdgDDbdFcEFfFdEeDeCeeFdFHbGdFdEbDbcEdF
+12;Horox Ryyder;10/2~fd1~b2/2~3c3/2~1~~b~2/1~~~~2~2/1~1f~d1c2/1b2~b4/10;GdgDDbdFcEFfFdEeDeCeeFdFHbGdFdEbDbcEdF;DbEbDbHbGdFdgDGddFcEcEdEFdEeDeCeeFdF
 13;Saelt-Marae;10/1a~7/2~4g~1/2~f~2c~1/2~1~1~a~1/2~~e~~1g1/2~~1c~ef1/10;hCeFfFdDeFfFHeGfgGFfHebBEf
 14;Aldar Beedo;10/5~e3/1~c2~d3/1~3~a3/1~~~~~b3/1~1~~~4/1ac1~~dbe1/10;GgFgHgGgGbGcFfGeFeEeGeFeEefGDeCeCcdFeFeGfGgG
-15;Exar Kun;10/1d~7/2~7/1a~7/2~7/1e~~e~f~~1/1a~~1gdgf1/10;gFhFEfbGbBbDcFdFbGeFfFfG
-16;Salacious Crumb;10/6~d2/6~3/1h4~3/1b~1~~c3/1d~~~b4/1h1a~c~a2/10;GeFebEcFbFdFdGeGfGHbGecFdG
-17;Melas;10/1e~7/2f~6/3~g5/3~e5/3~c~~~2/1a~~ga1cf1/10;EeeFfFgFbGdGcGcCdFeFfFgFbBcCdFdG
+15;Exar Kun;10/1d~7/2~7/1a~7/2~7/1e~~e~f~~1/1a~~1gdgf1/10;gFhFEfbGbBbDcFdFbGeFfFfG;EfgFbGbBbDcFdFeFfFbGfG
+16;Salacious Crumb;10/6~d2/6~3/1h4~3/1b~1~~c3/1d~~~b4/1h1a~c~a2/10;GeFebEcFbFdFdGeGfGHbGecFdG;HbbEGecFbFdGcFFfeGGeFffG
+17;Melas;10/1e~7/2f~6/3~g5/3~e5/3~c~~~2/1a~~ga1cf1/10;EeeFfFgFbGdGcGcCdFeFfFgFbBcCdFdG;bBeFEefFgFbGcGcCcCdFeFdFfFgFdG
 18;Kitster;10/3ad~4/5~4/4~g~~b1/4~1~1d1/2c~~~~~c1/2bg~1~1a1/10;FdeBdBeBfDIdIfHfHdfDgDhDIfcFGfFfGfHfFfcG
 19;Ketwol;10/10/6e3/4g~a~a1/5~1~2/5~a~h1/2ehag1~2/10;eDGdgFIfIdHfGfdGGdcGdG
 20;Mas Amedda;10/10/10/2a~6/3gc~~a2/2~c1~be2/2~1~geb~1/10;HeGeeEdEfEeEFgGehGgGFefGDfEecDdEeEDf
@@ -27,37 +27,37 @@
 23;Fisto Kit;10/3a2a~2/1h~g~h1~2/1g~1~2~2/2~~~~1~2/1~~~g~~c2/1c1~1~~g2/10;DcbDgBdCeEeFfGHfGfHfFffGFcEeEfDfCfbDcF
 24;Owen Lars;10/10/5~b3/5~h3/4~d4/2f~ebd3/2h2ef~2/10;GcFeeEeFcFdFgGeFGdFffGEfDf
 25;Derek Klivian;10/10/4f5/4d~4/3~h~4/1c~~1~~~a1/1ah~c~1fd1/10;EebFcGIfHfGfeDfFgFeEfFgFbGcGdG
-26;Ponda Baba;10/7~a1/6~~2/3c1~h3/3h~~f3/2~f~~h3/1a~1~~c3/10;dEeGGdIbHcdEdFeFGeFfGfEfDfeG
+26;Ponda Baba;10/7~a1/6~~2/3c1~h3/3h~~f3/2~f~~h3/1a~1~~c3/10;dEeGGdIbHcdEdFeFGeFfGfEfDfeG;IbHcdFdEeGdFGdGeFfEfDfGfeG
 27;Darth Sidious;10/2~g2~be1/2~3~c2/2~3~3/2~3~3/2~2~~3/1gc~ebg3/10;HbGfIbHbGfHcGfcGdGGgFgEgDb
-28;Ulic Qel-Droma;10/7~d1/2~a3~2/2~4~2/2~1~~a~2/2b~~fh~2/1dh~~b1~f1/10;GeFeFfGfcGEfDfFfEfDcEgcFFgdFcFIgIbHfGfeFcGfFgFbGcGdG
+28;Ulic Qel-Droma;10/7~d1/2~a3~2/2~4~2/2~1~~a~2/2b~~fh~2/1dh~~b1~f1/10;GeFeFfGfcGEfDfFfEfDcEgcFFgdFcFIgIbHfGfeFcGfFgFbGcGdG;DcGecGdGFeEfFfEfGfFfFgdFcFIgIbHfGfeFfFgFcGbGcGdG
 29;Shu Mai;10/2h7/2c~6/3~6/2c~~~~~a1/2a~~~b~2/1hb~h~1~h1/10;cFeGGfdGFfcGcCcCdEDfIgIeHfGfeEEffEFfgFbGcGdG
-30;Kir Kanos;10/10/10/2f~f~1h2/2d~1~1e2/3~~~~b2/1he~1~~db1/10;eDHfHfGfFfEfHfGfFfEfcDdFeFcEdFbGGgeFfFfGgG
+30;Kir Kanos;10/10/10/2f~f~1h2/2d~1~1e2/3~~~~b2/1he~1~~db1/10;eDHfHfGfFfEfHfGfFfEfcDdFeFcEdFbGGgeFfFfGgG;eDHfHfGfFfEfHfGfFfEfcEcEdFeFdFfFeFgFbGgG
 31;Brakiss;10/2~~hf4/2~7/1h~7/2~4~c1/2~a~~~~g1/2~g~ca1f1/10;IeHfGfEbFbDgDbEbDbbDcFdFcFdFcFGgeFdFIfHffFdGgFhFcGdGeG
-32;Paploo;10/2~g2g3/2~2~f~2/2~2~1~~1/2~2~hd~1/2~~~~af~1/2~1a~d1h1/10;gChDgEhEGgGcFfHfGfEfeGDbDf
+32;Paploo;10/2~g2g3/2~2~f~2/2~2~1~~1/2~2~hd~1/2~~~~af~1/2~1a~d1h1/10;gChDgEhEGgGcFfHfGfEfeGDbDf;DbgCGgGcHeGeFfEfDfgFhFeG
 33;Orn Free Taa;10/10/10/1e4~g2/1ah~2~d2/2a~~d~3/1ge1h1~3/10;fFHdHeGfFfEfcEbEbEDfdF
-34;Capt Lorth Needa;10/3c~5/4~5/4~h4/4~2~h1/2b~f~1~2/1cf~c~~b~1/10;IehGHgGgeFEgcFdFFfEfDfFdeFeGfGgGdGbGeGcGdB
+34;Capt Lorth Needa;10/3c~5/4~5/4~h4/4~2~h1/2b~f~1~2/1cf~c~~b~1/10;IehGHgGgeFEgcFdFFfEfDfFdeFeGfGgGdGbGeGcGdB;IehGHgGgeFEgcFdFFfFdEfeFeGdGbGfGeGcGdBgG
 35;Eeth Koth;10/2~f6/2~e6/2~a6/2~2d4/2~d~h~~2/2fah2e2/10;DbFfDfDcDdcFFfdFcFeFcGfFgF
-36;Toryn Farr;10/10/2b~2~e2/2d~2~a2/2e~2~3/3~~~~~~1/1h~ahd~1b1/10;cCHcdFeFfFgFhFcDdFeFHdeGGfFfbGcGdGcEdGeG
-37;Gragra;10/2~eh5/2~2ce~2/2~4~2/2~4~2/1~~c~1~~2/1chf~~~cf1/10;DfCfDbEbDbcFgCfCgCHfdFeGdGeGfGgG
+36;Toryn Farr;10/10/2b~2~e2/2d~2~a2/2e~2~3/3~~~~~~1/1h~ahd~1b1/10;cCHcdFeFfFgFhFcDdFeFHdeGGfFfbGcGdGcEdGeG;cCHcdFeFfFgFhFHdGfFfEfbGcGcDdGcEdGeG
+37;Gragra;10/2~eh5/2~2ce~2/2~4~2/2~4~2/1~~c~1~~2/1chf~~~cf1/10;DfCfDbEbDbcFgCfCgCHfdFeGdGeGfGgG;DbEbDbgCfCgCdGcFdFbGeGfGHfeGgG
 38;Jocasta Nu;10/10/2e~6/3c~1~e2/4~1~3/2b~~~~3/2dcd1b~e1/10;cFdFeFfFdDEfcCdDeFcGIgHgHd
-39;Boba Fett;10/3h~1b~2/1d~1~2~2/2~1~h1~2/2~1~e~~2/2~~d1~d2/1~~~eb~3/10;dBFdgBHeFeEfHfDgCgGgFgEgbC
+39;Boba Fett;10/3h~1b~2/1d~1~2~2/2~1~h1~2/2~1~e~~2/2~~d1~d2/1~~~eb~3/10;dBFdgBHeFeEfHfDgCgGgFgEgbC;gBHeFedBEfHfGgDgFgCgEgbC
 40;Jaxxon;10/10/2a~6/2e~~5/2cb~1~b2/2g1~~~g~1/2e~~~c1a1/10;dEHeGfcCcDdDdEcEGgeFcGHffFdEgFhFcGdGeG
 41;Reti;10/10/6~c2/6~3/1h~1c~~3/1a~~a~~3/1b~b1g~hg1/10;HceEfFEfDfbEcFbFdFbGeFfFfGgG
-42;Tikkes;10/8h1/6d1g1/5~f~d1/5~1~2/3~c~~h2/1c~~g1~f2/10;GdfFEfbGIdIdgDHgHfGfIdFf
+42;Tikkes;10/8h1/6d1g1/5~f~d1/5~1~2/3~c~~h2/1c~~g1~f2/10;GdfFEfbGIdIdgDHgHfGfIdFf;gDgDIdHdGdIdEfFfHfbG
 43;Po Nudo;10/7~a1/6~~d1/6~h2/3d~1~3/3e~~~3/3hdea3/10;IbHcIcHdHdGfdEdFdGeG
 44;Cliegg Lars;10/6c~h1/7~2/7~2/3d~~~~2/4e~a~2/1ca~he1d2/10;eFgBIbHeGeGfHfGfFgdEeFcGfFgFbGcGdG
-45;Quinlan Vos;10/1d~7/2g~6/2h~1~h3/3~d~1f2/2~~1~~h~1/1g~1f~~1h1/10;hFcCDfHfeGbBEecDcDdEGdeE
+45;Quinlan Vos;10/1d~7/2g~6/2h~1~h3/3~d~1f2/2~~1~~h~1/1g~1f~~1h1/10;hFcCDfHfeGbBEecDcDdEGdeE;bBcCcCcDGddEeEDfhFHfeG
 46;Lumiya;10/10/1eb~6/1fd~~5/3e~~4/2d1~~4/2bf~~~de1/10;cCdGdDcGeGcDbDcGdGdEcDdDeEdEHgeEbDcDEgIgHgGgdE
 47;Mon Mothma;10/7c2/6~a2/6~3/6~3/2ef~a~1c1/3e~cf~a1/10;FgdFcFeFfFIgHceGIgHc
-48;Red Leader;10/10/3c~5/4~1~c2/4~~~1a1/4~~bae1/2b~e~c3/10;dCHdEgGeHfGfIfHfGfFfIfHfGfcGdGeG
-49;Prince Xizor;10/10/6g3/4f~d3/2~~b5/1a~da~4/1g~b1~f3/10;EeDeEfeFbFDfGdFdEfGdFdEfbG
+48;Red Leader;10/10/3c~5/4~1~c2/4~~~1a1/4~~bae1/2b~e~c3/10;dCHdEgGeHfGfIfHfGfFfIfHfGfcGdGeG;dCGfeFHdHfIfHfGfFfIfHfcGdG
+49;Prince Xizor;10/10/6g3/4f~d3/2~~b5/1a~da~4/1g~b1~f3/10;EeDeEfeFbFDfGdFdEfGdFdEfbG;GdEeFdGdDeEfFdEeeFbGDfEf
 50;Sabé;10/1~h7/1~4~b2/1~4~3/1~4~3/1~1~dh~c2/1h1chb1d2/10;CbEfFfHfGfFgdFeFfFgFHcGfFfdG
 51;Boles Roor;10/2~a6/1h~7/2g7/1~h~2~g2/1~1~2~3/1e~aeh~3/10;DbCeCecEbGcGbCbGFgcEHebGcGdGeG
 52;Luke Skywalker;10/1~b~d3d1/1~1~3~h1/1~1~3~2/1b1~3~2/2ef~~~~2/2f1h~e~2/10;CbIcdFcFGgeFdFHgfFeFEbdFeFGfFfEfDfgGIcHfeGfG
 53;Admiral Motti;10/10/10/3d1gb~2/3f~2~2/3b~c~~2/3d1fg~c1/10;fFgFdEeFdFgDfDgDHfeFfG
-54;Chewbacca;10/4~c4/3~b1de2/3~1~c3/3~~c4/2~~~5/2bde~4/10;EcDfFbEceGFeGdFeGdFeHcGdFe
-55;Lott Dod;10/10/5e4/4~d4/1a~c~5/2eh~~~3/1cad~1h3/10;bEdEdFcFeFfFFdFdEeEfbGcG
+54;Chewbacca;10/4~c4/3~b1de2/3~1~c3/3~~c4/2~~~5/2bde~4/10;EcDfFbEceGFeGdFeGdFeHcGdFe;FbEcEcFeGdHcGddEGdFeFeeG
+55;Lott Dod;10/10/5e4/4~d4/1a~c~5/2eh~~~3/1cad~1h3/10;bEdEdFcFeFfFFdFdEeEfbGcG;bEdEdFFdFdEeeFfFEgcFbG
 56;Edcel Bar Gane;10/5c~3/3~e1~~d1/3~2~~2/1h~~~h~~2/2~b~b~~2/1d~c~1e3/10;FedFfBGfFfEfIcHfGfFfEfEcdFbGeFfFbEcG
 57;Tru Veld;10/2~f6/2~7/1~gfa~1~h1/1~3~1~2/1~3fh~2/1g4a~2/10;CdeDgFfFgFfFdDDbeDcDdDfFeDfFId
-58;Umpass-stay;10/6f~h1/5~e~2/4~~1~2/2e~~h1~2/1~g~~2~2/1f1egh~~~1/10;GcFdcEGcFeEfcFfGeGgGfGdFFeEfeGDfCfdGeGhGfGIb
-59;Darth  Vader;10/3~e5/3~6/3e6/3g~5/4fb~d2/1f~dbg~3/10;EbfGdEeFeGdGfGHfGfbGcGdGeG
+58;Umpass-stay;10/6f~h1/5~e~2/4~~1~2/2e~~h1~2/1~g~~2~2/1f1egh~~~1/10;GcFdcEGcFeEfcFfGeGgGfGdFFeEfeGDfCfdGeGhGfGIb;GcFeGcFdcFfGEeeGDedFFeEeCfEgdGgGeGhGfGIb
+59;Darth  Vader;10/3~e5/3~6/3e6/3g~5/4fb~d2/1f~dbg~3/10;EbfGdEeFeGdGfGHfGfbGcGdGeG;EbbGfGHfeGGfFfcGdGdEeG

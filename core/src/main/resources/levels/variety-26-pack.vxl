@@ -15,20 +15,20 @@
 11;Iarwain;10/1c~4~g1/2g~3~2/3~~2~2/3~~b~a2/1~~~b1~3/1ecea5/10;bBEfDfFeCfEfcCcCdDdEbFeEEfDfbGfEHeGeFeIbHe
 12;Gandalf;10/8g1/6~~f1/6~c2/3f~~~3/2c1h~~3/2h~g1~3/10;IcHcIcHdHdeFGeFeFfcGGfFfdEeFfFcG
 13;Gimli;10/10/1e~7/2~2~h3/1f~2~1~g1/1d~~~~~gf1/1h~~e~1d2/10;IebEbFbCIfHfGfEgcFFgdFcFGdeFcGfFgFbGcGdG
-14;Iarwain Ben-adar;10/10/2d7/2f7/2b~~5/3~a~~~b1/1a~~1bd~f1/10;EfcEcEdEeFdFfFgGIfHfeFcEdFbGGgeFfFfGgG
+14;Iarwain Ben-adar;10/10/2d7/2f7/2b~~5/3~a~~~b1/1a~~1bd~f1/10;EfcEcEdEeFdFfFgGIfHfeFcEdFbGGgeFfFfGgG;EfcEcEdEcEeFdFgGIffGeFdFfFeFfFbGfGgG
 15;Bifur;10/10/3h~~4/4a~c~2/2~fc~1~2/2~2e~~2/1a~2hef2/10;dCeCeDgDfDfFeEdEeEGdFefFfGEeDe
 16;Glorfindel;10/1~g7/1~2a~4/1~3~4/1~3~4/1fb~~~~b~1/1dg~d~a1f1/10;CbEgcFbFdFcFbFdFbGHfGgeFeCfFgFhFeG
-17;Periannath;10/5h4/3~~d4/3~6/2g~6/1~a~~~~3/1afhf1g~d1/10;CfcFdFeFfFFcEcFcEcdFeFcGfFgG
+17;Periannath;10/5h4/3~~d4/3~6/2g~6/1~a~~~~3/1afhf1g~d1/10;CfcFdFeFfFFcEcFcEcdFeFcGfFgG;FccEEcFcEcdFeFdFfFeFfFcGgG
 18;Lady Of Rivendell;10/2f~3~d1/3~3~f1/3~~2~2/1c~~a2~2/3~gd~~2/3a2cg2/10;IbfFbEcEEeeFfFgFcBdDeFdFIcfFgFeFfF
 19;Balin;10/10/7~c1/7~d1/5~~~e1/3h~~~g2/1ehd1~~cg1/10;dFHfGgeFHgfFIgIcIdHeGeFfEfGfFfEfIeHeGfHfFffGEfbG
 20;Noldor;10/10/3a6/2~c~5/1~e1~~4/1~gb~~g~2/1c1a~~1be1/10;DdCfCeGfFgdFcFbFdDeEeFfFgFdFcFeFdFfFgFdG
 21;Puddifoot;10/10/1~h7/1~5~c1/1~3d~~2/1~1fg1g~2/1~h1f~dc2/10;CcfEgFIdeGfGHfeGgGdFeGfG
 22;Fatty Lumpkin;10/5~e3/3b~~4/4~~4/4~~4/1dad~~g3/1ag1~be3/10;dFcFbFdFcFeFdFGbFeFfEfDfCfGfFfdCeEEfDfeG
-23;High-elves;10/5b~~b1/3d~1~~2/4~1~~2/4~1~~f1/4~~~a2/1fga~g1d2/10;fBIbHeHfGfFfIeHfGfFgdCeFcGfFgFbGcGdG
+23;High-elves;10/5b~~b1/3d~1~~2/4~1~~2/4~1~~f1/4~~~a2/1fga~g1d2/10;fBIbHeHfGfFfIeHfGfFgdCeFcGfFgFbGcGdG;IbHffBIeGfFfHfGfFgdCeFfFgFcGbGcGdG
 24;Barliman;10/2bg~5/2ga~5/4~5/4~~4/2~bh~4/2h1b~~a2/10;dBcBdBeEeFdCFfEfDfcCdCeFeGfG
 25;Undomiel;10/3~c2~c1/3~3~2/1b~~3~2/2~~3~2/2f~~g~~d1/1bd~g1f3/10;FfIbHfGfFfIfHfGfFfEgcFEbdFeFfFcGbD
-26;Wormtongue;10/10/7~d1/1b~2f~~2/2~3~cb1/2~~c~~a2/1af~1~~d2/10;IceFfGHdfDGfGfFfEfHfGfFfEfbGIeHeGfHfFffGbDEf
-27;Jolly Cotton;10/7e~1/4g3~1/1a~1h~~1h1/2~~b1~~b1/2g~ea~~2/3~2~~2/10;eDfDIeIeHfhBIefFeFfFeFfFgFbDEfcEdFcFeFfF
+26;Wormtongue;10/10/7~d1/1b~2f~~2/2~3~cb1/2~~c~~a2/1af~1~~d2/10;IceFfGHdfDGfGfFfEfHfGfFfEfbGIeHeGfHfFffGbDEf;cGbGbDeFfGfDcFdFeFGfFfEfHfGfHfIcFfEfIefG
+27;Jolly Cotton;10/7e~1/4g3~1/1a~1h~~1h1/2~~b1~~b1/2g~ea~~2/3~2~~2/10;eDfDIeIeHfhBIefFeFfFeFfFgFbDEfcEdFcFeFfF;eDfFfDIeIehBeFIefFeFfFgFbDEfcEdFcFeFfF
 28;Evenstar;10/2b~6/3~2~c2/3~a1~fe1/3cf~~3/3b1~~~~1/5e~1a1/10;HcHdeEcBeEdEfFgFhFeEfFIdHd
 29;Bombur;10/4~a1~f1/4~2~2/4~2~2/3~~1~d2/2b~d~~a2/1hf~h~1b2/10;HeeFGfIbHeeGGfFfHfGfFfEfcFdFFbEeeFcGfFgFbGcGdG
 30;Bill Ferny;10/5h4/4~f4/4~5/4~2d2/1e~d~~~g2/1f~h1eg3/10;HfdFeFfFHfFcEfDgbFcFdFeFFcEfDfbG
@@ -37,7 +37,7 @@
 33;Wargs;10/7d~1/1e3c~1~1/1g~3~1~1/2~3~e~1/2~~d~~1g1/2~g1~g~c1/10;bDfCGggGeFfGHeGfgGbDFfEfhBfGgG
 34;Belladonna;10/2e~~f1d2/3~~1~f2/3~~1~3/3f~~~3/3a~~~3/1aed~~d3/10;HcHcdGGeGgFgFbcBdGbGcG
 35;Oin;10/2h~6/2d~6/2e~6/1h1~6/1f~e~~~a2/1a~d1~~f2/10;cBdFDfbFcFbFcCeFdFeFfGHfGfFfEfcDdFbGeFfFfG
-36;Goldberry;10/10/6a3/2a~~~c3/3~bh4/2~g6/2~c~h~gb1/10;GdFdEeDfEeDfFeEedGcDGdFeEecGdGeGfGcGdGeGfGgG
+36;Goldberry;10/10/6a3/2a~~~c3/3~bh4/2~g6/2~c~h~gb1/10;GdFdEeDfEeDfFeEedGcDGdFeEecGdGeGfGcGdGeGfGgG;GdFdGdEecDdDDfEeFeDfEedGcGdGcGeGdGfGeGfGgG
 37;Gildor Inglorion;10/2e7/2c~6/1~e~6/1f1~6/1d~d~~~c2/2~e~~1f2/10;CdbFbFdFcFcCbFdFHfGfeFcGfFgFcDdG
 38;Gwaihir;10/2g7/2b~6/3~6/3~~d1~c1/2~h~b~~2/1dcg~1~~h1/10;FedFfFeFfFgGIeHfGfFfEfDfcCcCdFeFfFgFgGbGcG
 39;Southrons;10/1g~7/1a~1a~~3/2~2g~3/2~3~3/2~~~~b3/1ba~1~f~f1/10;cGbGbBcFdFeFGfFfEfDfeCfCGfgGFffDDgCgEfbC
@@ -49,15 +49,15 @@
 45;Grishnakh;10/2~d6/2~7/2~7/2~1~~gh2/1f~~~~ad2/2~ha1fg2/10;GeHeGeFeDgEgFfEfDfGfFfEfHfGfFfEfcFdFeFfFgFbFDbcFdFcFeFfFcG
 46;MUmak;10/1e~e3~d1/2~f3~2/2~4~2/2~~~2~2/2d~~~~~2/1ebf~~~fb1/10;bBDccFcEHgGgdEcFIgHgGgFgdFeFfGeGdGgGIbfGHfGfcGdGeGHgGgFgEgDc
 47;Thranduil;10/1f~7/2~1gc~3/2~3~f2/2~3~d2/2~g~~~3/2cf1d~3/10;bBdFeFfFHdGfFfcFfCeCfCGfFfHeEf
-48;Galadriel;10/10/5c~~2/7~2/5~f~2/2~g~~h3/1afh~acg2/10;FgdFeFGeFfEfDfGfFfEfbGcGfCgCHefG
+48;Galadriel;10/10/5c~~2/7~2/5~f~2/2~g~~h3/1afh~acg2/10;FgdFeFGeFfEfDfGfFfEfbGcGfCgCHefG;fCgCFgdFeFGfHeFfEfGfFfEfbGcGfG
 49;Young Tom;10/10/1d~7/1b~c~5/2~1c~4/2~~b~~ag1/3~d~g1a1/10;bCcFHfIfeGGfHfFfdDeEfFeFfFgFhFbDEgcFdFdGeG
 50;Lobelia;10/10/2~g1~a3/2~1g~4/1e~2~4/1c~~~~4/1ag~1~e~c1/10;bEGgGcFfEfcFdFeFbFcFdFeFeDFfEfDcbGfGgG
-51;Merry Brandybuck;10/10/1a~e6/1g~1~e4/2~1~f4/1b~~~5/1f~1b~~ag1/10;FdEfDfbFDccFdFbGbCcFdFeGfGbDcFdFFeEfDfeGfGgG
+51;Merry Brandybuck;10/10/1a~e6/1g~1~e4/2~1~f4/1b~~~5/1f~1b~~ag1/10;FdEfDfbFDccFdFbGbCcFdFeGfGbDcFdFFeEfDfeGfGgG;FdEfDfbFcFdFbCcFdFeGfGbDDccFdFFeEfDfeGfGgG
 52;Dori;10/10/6~b2/3~h1~3/2~~1~~3/2cgh~g3/1bh2hc~2/10;eFEdDedFcFHceFdFeFGegGFffGEfDf
 53;Fimbrethil;10/10/10/2g~~dg~b1/3~~2~e1/3d~~~~2/2be1~~~2/10;cDgDdEIeeFdFeFfFHfGfFfEfIeHfGfFfEfFdeFfFfG
-54;Istari;10/10/1b~~a5/2~~e5/2~~c~4/1~~~d~4/1ec~1b~da1/10;cGEcEebGDeEeDebCcDCfdEeEeFfGdFbGeFfGgG
-55;Fili;10/6f~f1/7~2/3b3~2/3g~2~2/4~~cbd1/2c~~~1dg1/10;gBIbGfHfIfGfFfdEdEeFfFgFcGdG
-56;Fallohides;10/8e1/7~d1/7~2/3c~2~f1/4~~~~e1/1e~efc1~d1/10;bGdEeFIfIfIchEIcHfGf
+54;Istari;10/10/1b~~a5/2~~e5/2~~c~4/1~~~d~4/1ec~1b~da1/10;cGEcEebGDeEeDebCcDCfdEeEeFfGdFbGeFfGgG;cGEcEebGDeEeDebCcDdEeEeFdFcFeFfGfGgG
+55;Fili;10/6f~f1/7~2/3b3~2/3g~2~2/4~~cbd1/2c~~~1dg1/10;gBIbGfHfIfGfFfdEdEeFfFgFcGdG;gBIbGfHfGfIfFgdEdEeFfFgFcG
+56;Fallohides;10/8e1/7~d1/7~2/3c~2~f1/4~~~~e1/1e~efc1~d1/10;bGdEeFIfIfIchEIcHfGf;dEeFbGIgIfIcIcHfGf
 57;Nazgul;10/1c~4c~1/2~5~1/1c~5~1/1g~3~~~1/1f~~~~~bg1/1c~b~~~1f1/10;bEbFbBhBIeHecFHfGgFgdFcFGgeFdFIfHffFdGgFhFcGdGeG
 58;Gloin;10/5~b3/5~4/5~c3/3h~~a3/4~~h~f1/1b~cf~1~a1/10;DgeGGdGegFIfHffEFfGfgFhFdEGbeFcGfFgFbGcGdG
 59;Appledore;10/6~g2/1f2~a~f2/1h~1~1~3/2~1~1~~e1/2~~a~~~g1/2~2~he2/10;FcIeHbHcGgGfIfFfEfDfbDbDcFdFeF
