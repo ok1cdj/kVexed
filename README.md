@@ -14,16 +14,6 @@ permissions, no services.**
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/ok1cdj)
 
-## Screens
-
-<p>
-  <img src="docs/screenshot-packs.png" width="220" alt="Pack list" />
-  <img src="docs/screenshot-solution.png" width="220" alt="Best-known solution viewer" />
-  <img src="docs/screenshot-settings.png" width="220" alt="Settings" />
-</p>
-
-*Pack list · best-known solution viewer · settings — all captured on the Mudita Kompakt.*
-
 ## What it does
 
 - Classic Vexed on a fixed **10×8** board with eight block types. Move a block
