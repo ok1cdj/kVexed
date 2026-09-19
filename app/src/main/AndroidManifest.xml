@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- No permissions. kVexed is fully offline: no network, no location, no
-         storage. -->
+         storage.
+
+         androidx.core auto-injects a private signature permission
+         (…DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION) it declares for runtime
+         receivers registered with RECEIVER_NOT_EXPORTED. kVexed registers no
+         receivers, so we strip both the declaration and its use to keep the
+         manifest genuinely permission-free. -->
+    <permission
+        android:name="${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        tools:node="remove" />
+    <uses-permission
+        android:name="${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        tools:node="remove" />
 
     <!-- Open the Buy Me a Coffee / GitHub links in a browser (Android 11+
          package visibility). This is a query, not a permission. -->
