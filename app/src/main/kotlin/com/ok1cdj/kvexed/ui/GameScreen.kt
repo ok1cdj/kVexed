@@ -232,10 +232,16 @@ private fun GameButton(
 ) {
     ButtonMMD(
         onClick = { if (enabled) onClick() },
-        modifier = modifier.border(1.dp, if (enabled) Color.Black else Color.Gray, RoundedCornerShape(8.dp)),
+        modifier = modifier
+            .height(56.dp)
+            .border(1.dp, if (enabled) Color.Black else Color.Gray, RoundedCornerShape(8.dp)),
         shape = RoundedCornerShape(8.dp),
     ) {
-        TextMMD(text = text, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+        // Center the label in the button box — MMD's default content alignment
+        // leaves it sitting high.
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            TextMMD(text = text, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+        }
     }
 }
 

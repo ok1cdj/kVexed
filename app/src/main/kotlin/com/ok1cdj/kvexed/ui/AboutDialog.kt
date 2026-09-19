@@ -4,15 +4,18 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -36,29 +39,40 @@ fun AboutDialog(onDismiss: () -> Unit) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
+                .heightIn(max = 520.dp) // bound the whole dialog so it never runs off-screen
                 .border(1.dp, Color.Black, RoundedCornerShape(12.dp))
                 .background(Color.White, RoundedCornerShape(12.dp))
-                .padding(16.dp)
-                .verticalScroll(rememberScrollState()),
+                .padding(16.dp),
         ) {
-            TextMMD(text = stringResource(R.string.about_title), fontSize = 22.sp, fontWeight = FontWeight.Bold)
-            Spacer(Modifier.height(2.dp))
-            TextMMD(text = stringResource(R.string.about_version, BuildConfig.VERSION_NAME), fontSize = 13.sp)
-            TextMMD(text = stringResource(R.string.about_author), fontSize = 13.sp)
-            Spacer(Modifier.height(10.dp))
-            TextMMD(text = stringResource(R.string.about_desc), fontSize = 13.sp)
-            Spacer(Modifier.height(10.dp))
-            TextMMD(text = stringResource(R.string.about_license), fontSize = 13.sp, fontWeight = FontWeight.Bold)
-            Spacer(Modifier.height(6.dp))
-            TextMMD(text = stringResource(R.string.about_credits), fontSize = 12.sp)
-            Spacer(Modifier.height(14.dp))
+            // Only the descriptive text scrolls (it takes the leftover space); the
+            // action buttons stay pinned below so Close is always visible.
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f, fill = false)
+                    .verticalScroll(rememberScrollState()),
+            ) {
+                TextMMD(text = stringResource(R.string.about_title), fontSize = 22.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.height(2.dp))
+                TextMMD(text = stringResource(R.string.about_version, BuildConfig.VERSION_NAME), fontSize = 13.sp)
+                TextMMD(text = stringResource(R.string.about_author), fontSize = 13.sp)
+                Spacer(Modifier.height(10.dp))
+                TextMMD(text = stringResource(R.string.about_desc), fontSize = 13.sp)
+                Spacer(Modifier.height(10.dp))
+                TextMMD(text = stringResource(R.string.about_license), fontSize = 13.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.height(6.dp))
+                TextMMD(text = stringResource(R.string.about_credits), fontSize = 12.sp)
+            }
 
+            Spacer(Modifier.height(12.dp))
             LinkButton(stringResource(R.string.about_coffee)) { openUrl(context, COFFEE_URL) }
             Spacer(Modifier.height(8.dp))
             LinkButton(stringResource(R.string.about_github)) { openUrl(context, GITHUB_URL) }
             Spacer(Modifier.height(8.dp))
             ButtonMMD(onClick = onDismiss, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(8.dp)) {
-                TextMMD(text = stringResource(R.string.close), fontSize = 15.sp)
+                Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+                    TextMMD(text = stringResource(R.string.close), fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                }
             }
         }
     }
@@ -71,7 +85,9 @@ private fun LinkButton(text: String, onClick: () -> Unit) {
         modifier = Modifier.fillMaxWidth().border(1.dp, Color.Black, RoundedCornerShape(8.dp)),
         shape = RoundedCornerShape(8.dp),
     ) {
-        TextMMD(text = text, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+        Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+            TextMMD(text = text, fontSize = 15.sp, fontWeight = FontWeight.Bold)
+        }
     }
 }
 
