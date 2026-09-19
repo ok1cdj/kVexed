@@ -80,40 +80,46 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit) {
             onCellTap = vm::onCellTap,
         )
 
-        // Status
-        Box(
-            modifier = Modifier.fillMaxWidth().height(48.dp).padding(horizontal = 12.dp),
-            contentAlignment = Alignment.CenterStart,
-        ) {
-            TextMMD(text = "Moves ${vm.moveCount} · Par ${vm.par}", fontSize = 15.sp)
-        }
-
-        // Win / stuck banner
-        when (vm.gameState) {
-            GameState.WON -> Banner(
-                text = "Solved in ${vm.moveCount} moves (par ${vm.par})",
-                actionLabel = "Next",
-                onAction = vm::nextLevel,
-            )
-            GameState.LOST -> Banner(
-                text = "Stuck — undo or restart.",
-                actionLabel = "Restart",
-                onAction = vm::restart,
-            )
-            GameState.PLAYING -> Spacer(Modifier.height(8.dp))
-        }
-
         Spacer(Modifier.weight(1f))
 
-        // Controls
+        // Status / end-state message — full width on its own line, so it always
+        // fits regardless of move count. No inline button competing for width.
+        val message = when (vm.gameState) {
+            GameState.WON -> "Solved in ${vm.moveCount} moves · par ${vm.par}"
+            GameState.LOST -> "Stuck — undo or restart"
+            GameState.PLAYING -> "Moves ${vm.moveCount} · Par ${vm.par}"
+        }
+        Box(
+            modifier = Modifier.fillMaxWidth().height(40.dp).padding(horizontal = 12.dp),
+            contentAlignment = Alignment.CenterStart,
+        ) {
+            TextMMD(
+                text = message,
+                fontSize = 15.sp,
+                fontWeight = if (vm.gameState == GameState.WON) FontWeight.Bold else FontWeight.Normal,
+            )
+        }
+
+        // Controls — a single fixed-height row whose contents depend on state, so
+        // nothing changes size between playing and finished.
         Row(
-            modifier = Modifier.fillMaxWidth().height(88.dp).padding(horizontal = 12.dp),
+            modifier = Modifier.fillMaxWidth().height(80.dp).padding(horizontal = 12.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            GameButton("Undo", enabled = vm.canUndo, modifier = Modifier.weight(1f), onClick = vm::undo)
-            GameButton("Restart", modifier = Modifier.weight(1f), onClick = vm::restart)
-            GameButton("Hint", modifier = Modifier.weight(1f), onClick = vm::showHint)
+            when (vm.gameState) {
+                GameState.WON ->
+                    GameButton("Next level", modifier = Modifier.weight(1f), onClick = vm::nextLevel)
+                GameState.LOST -> {
+                    GameButton("Undo", enabled = vm.canUndo, modifier = Modifier.weight(1f), onClick = vm::undo)
+                    GameButton("Restart", modifier = Modifier.weight(1f), onClick = vm::restart)
+                }
+                GameState.PLAYING -> {
+                    GameButton("Undo", enabled = vm.canUndo, modifier = Modifier.weight(1f), onClick = vm::undo)
+                    GameButton("Restart", modifier = Modifier.weight(1f), onClick = vm::restart)
+                    GameButton("Hint", modifier = Modifier.weight(1f), onClick = vm::showHint)
+                }
+            }
         }
     }
 }
@@ -209,18 +215,6 @@ private fun drawHint(nc: android.graphics.Canvas, paint: Paint, m: Move, cellPx:
         close()
     }
     nc.drawPath(path, paint)
-}
-
-@Composable
-private fun Banner(text: String, actionLabel: String, onAction: () -> Unit) {
-    Row(
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 4.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween,
-    ) {
-        TextMMD(text = text, fontSize = 15.sp, fontWeight = FontWeight.Bold)
-        GameButton(actionLabel, onClick = onAction)
-    }
 }
 
 @Composable
