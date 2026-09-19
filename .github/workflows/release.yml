@@ -31,6 +31,12 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          # Skip the action's default package install — some versions try to
+          # install the obsolete 'tools' package, which no longer exists and
+          # fails the step. AGP downloads the SDK platform/build-tools it needs
+          # during assembleRelease (licenses are auto-accepted by the action).
+          packages: ''
 
       # The engine oracle gates the release: a regression fails the tag build.
       - name: Run engine tests
