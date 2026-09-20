@@ -23,6 +23,8 @@ data class PackProgress(
     val resumeLevel: Int? = null,
     val resumeBoard: String? = null,
     val resumeMoves: Int = 0,
+    // Position along the stored solution when saved; null = off-path/unknown (hint off).
+    val resumePathIndex: Int? = null,
 ) {
     val solvedCount: Int get() = levels.values.count { it.solved }
 }
@@ -103,6 +105,7 @@ class ProgressStore(private val context: Context) {
                 "resumeLevel" to pp.resumeLevel,
                 "resumeBoard" to pp.resumeBoard,
                 "resumeMoves" to pp.resumeMoves,
+                "resumePathIndex" to pp.resumePathIndex,
             )
         )
     }
@@ -124,6 +127,7 @@ class ProgressStore(private val context: Context) {
             resumeLevel = (m["resumeLevel"] as? Double)?.toInt(),
             resumeBoard = m["resumeBoard"] as? String,
             resumeMoves = (m["resumeMoves"] as? Double)?.toInt() ?: 0,
+            resumePathIndex = (m["resumePathIndex"] as? Double)?.toInt(),
         )
     }
 

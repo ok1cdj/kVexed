@@ -71,6 +71,32 @@ class EngineInvariantTest {
         assertTrue(failures.isEmpty()) { "block count increased for: ${failures.take(20)}" }
     }
 
+    @Test
+    fun matchingMovePrefixYieldsMatchingBoard() {
+        // The hint fix relies on this: because the engine is deterministic, two
+        // playthroughs that share a move prefix reach the same board after that
+        // prefix — so PathTracker can compare moves instead of boards.
+        val failures = mutableListOf<String>()
+        for (level in levels) {
+            val moves = level.solutionMoves()
+            for (n in 0..moves.size) {
+                val a = replay(level, moves.take(n))
+                val b = replay(level, moves.take(n))
+                if (a != b) { failures += "${level.title}@$n"; break }
+            }
+        }
+        assertTrue(failures.isEmpty()) { "prefix replay diverged for: ${failures.take(20)}" }
+    }
+
+    private fun replay(level: Level, moves: List<Move>): Board {
+        var board = level.toBoard()
+        for (m in moves) {
+            val r = Engine.move(board, m.x, m.y, m.dir)
+            if (r is MoveResult.Moved) board = r.board else break
+        }
+        return board
+    }
+
     private fun playAll(level: Level): Board {
         var board = level.toBoard()
         for (m in level.solutionMoves()) {

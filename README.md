@@ -21,7 +21,10 @@ permissions, no services.**
   adjacent same-type blocks clear simultaneously, which can chain.
 - Bundles the original **Vexed level packs** (48 packs, 2800 puzzles), each with
   a par derived from the shipped human solution — golf your move count against it.
-- **Unlimited undo**, restart, and a **hint** that reveals only the next move.
+- **Unlimited undo**, restart, and a **hint** that reveals the next move of the
+  stored solution. The hint is offered only while you're still on that solution
+  path; once you play a different move it's disabled (with a one-line note)
+  rather than pointing at a stale move — an undo walks you back onto the path.
 - **Settings** (gear, top-right): show/hide a **Solve** button that steps through
   the best-known solution (hidden by default so it doesn't spoil), and toggle
   optional **haptic feedback** on each move (uses the system haptic channel — no
@@ -133,6 +136,7 @@ All isolated to single constants:
 core/  (pure Kotlin/JVM — no Android on the classpath)
   Board.kt         immutable 10×8 board over CharArray(80)
   Engine.kt        move -> settle -> clear (chains); win/lose; undo
+  PathTracker.kt   tracks whether play still follows the stored solution (hint gating)
   LevelParser.kt   reads index.json + *.vxl from resources
   Level/LevelPack  data classes
 app/   (Android, depends on :core)

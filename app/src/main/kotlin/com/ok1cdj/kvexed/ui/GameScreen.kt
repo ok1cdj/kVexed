@@ -108,7 +108,10 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit, onSettings: () -> Unit) {
         val message = when (vm.gameState) {
             GameState.WON -> "Solved in ${vm.moveCount} moves · par ${vm.par}$bestSuffix"
             GameState.LOST -> "Stuck — undo or restart"
-            GameState.PLAYING -> "Moves ${vm.moveCount} · Par ${vm.par}$bestSuffix"
+            // Off the stored path the hint can't be trusted; say so instead of the tally.
+            GameState.PLAYING ->
+                if (!vm.hintAvailable) "Hint unavailable — off the stored solution path"
+                else "Moves ${vm.moveCount} · Par ${vm.par}$bestSuffix"
         }
         Box(
             modifier = Modifier.fillMaxWidth().height(40.dp).padding(horizontal = 12.dp),
@@ -144,7 +147,7 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit, onSettings: () -> Unit) {
                 GameState.PLAYING -> {
                     GameButton("Undo", enabled = vm.canUndo, fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::undo)
                     GameButton("Restart", fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::restart)
-                    GameButton("Hint", fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::showHint)
+                    GameButton("Hint", enabled = vm.hintAvailable, fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::showHint)
                     if (solve) GameButton("Solve", fontSize = fs, modifier = Modifier.weight(1f)) { confirmSolution = true }
                 }
             }

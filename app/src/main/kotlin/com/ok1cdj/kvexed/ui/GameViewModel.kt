@@ -16,6 +16,7 @@ import com.ok1cdj.kvexed.core.LevelParser
 import com.ok1cdj.kvexed.core.Move
 import com.ok1cdj.kvexed.core.MoveResult
 import com.ok1cdj.kvexed.core.PackInfo
+import com.ok1cdj.kvexed.core.PathTracker
 import com.ok1cdj.kvexed.data.LevelStat
 import com.ok1cdj.kvexed.data.PackProgress
 import com.ok1cdj.kvexed.data.Progress
@@ -59,7 +60,8 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
     private var pack: LevelPack? = null
     private var level: Level? = null
     private var solutionMoves: List<Move> = emptyList()
-    private val undoStack = ArrayDeque<Board>()
+    // Each entry is the (board, pathIndex) from before a move, so undo restores both.
+    private val undoStack = ArrayDeque<Pair<Board, Int?>>()
 
     var board: Board? by mutableStateOf(null)
         private set
@@ -72,6 +74,14 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
     var hint: Move? by mutableStateOf(null)
         private set
     private var hintUsedThisLevel = false
+
+    /**
+     * Position along the stored solution: `n` means the first `n` moves matched
+     * `solutionMoves[0..n)`, so `solutionMoves[n]` is the next hintable move.
+     * `null` once the player deviates — hints are then withheld (see [hintAvailable]).
+     */
+    var pathIndex: Int? by mutableStateOf(0)
+        private set
 
     // --- solution playback (step-through viewer) ------------------------------
     var solutionActive by mutableStateOf(false)
@@ -89,6 +99,8 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
     val packTitle: String get() = pack?.title ?: ""
     val levelCount: Int get() = pack?.levels?.size ?: 0
     val canUndo: Boolean get() = undoStack.isNotEmpty()
+    /** Hint is offered only while the player is on the stored solution path. */
+    val hintAvailable: Boolean get() = pathIndex?.let { it < solutionMoves.size } ?: false
 
     val solutionBoard: Board? get() = solutionBoards.getOrNull(solutionStep)
     val solutionLength: Int get() = solutionMoveList.size
@@ -155,9 +167,12 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
         if (saved?.resumeLevel == index && savedBoard != null) {
             board = runCatching { Board.parse(savedBoard) }.getOrDefault(lv.toBoard())
             moveCount = saved.resumeMoves
+            // Older saves lack this key → null → hint stays off until restart (conservative).
+            pathIndex = saved.resumePathIndex
         } else {
             board = lv.toBoard()
             moveCount = 0
+            pathIndex = 0
         }
         gameState = Engine.state(board!!)
         screen = Screen.Game(packId, index)
@@ -207,7 +222,8 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
         when (val r = Engine.move(b, x, y, dir)) {
             is MoveResult.Illegal -> {}
             is MoveResult.Moved -> {
-                undoStack.addLast(b)
+                undoStack.addLast(b to pathIndex)
+                pathIndex = PathTracker.next(pathIndex, solutionMoves, Move(x, y, dir))
                 board = r.board
                 moveCount++
                 moveTick++ // signal the UI to fire haptic feedback for this move
@@ -219,7 +235,9 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
 
     fun undo() {
         if (undoStack.isEmpty()) return
-        board = undoStack.removeLast()
+        val (prevBoard, prevIndex) = undoStack.removeLast()
+        board = prevBoard
+        pathIndex = prevIndex
         moveCount--
         selected = null
         hint = null
@@ -230,15 +248,19 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
         val lv = level ?: return
         board = lv.toBoard()
         moveCount = 0
+        pathIndex = 0
         undoStack.clear()
         selected = null
         hint = null
         gameState = Engine.state(board!!)
     }
 
-    /** Reveal only the next move of the stored solution. Marks the level as hinted. */
+    /**
+     * Reveal only the next move of the stored solution. Only meaningful while on
+     * the path ([hintAvailable]); off-path it yields no move. Marks the level as hinted.
+     */
     fun showHint() {
-        hint = solutionMoves.getOrNull(moveCount)
+        hint = pathIndex?.let { solutionMoves.getOrNull(it) }
         selected = null
         if (hint != null) {
             hintUsedThisLevel = true
@@ -279,7 +301,9 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
         val stat = LevelStat(solved = true, bestMoves = best, hintUsed = hintUsedThisLevel || (prev?.hintUsed ?: false))
         val newLevels = packProg.levels + (idx to stat)
         // Clear the resume slot for a solved level.
-        val newPack = packProg.copy(levels = newLevels, resumeLevel = null, resumeBoard = null, resumeMoves = 0)
+        val newPack = packProg.copy(
+            levels = newLevels, resumeLevel = null, resumeBoard = null, resumeMoves = 0, resumePathIndex = null,
+        )
         progress = progress.copy(packs = progress.packs + (packId to newPack))
         persist()
     }
@@ -307,6 +331,7 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
             resumeLevel = g.levelIndex,
             resumeBoard = b.toBoardString(),
             resumeMoves = moveCount,
+            resumePathIndex = pathIndex,
         )
         progress = progress.copy(packs = progress.packs + (g.packId to newPack))
     }
