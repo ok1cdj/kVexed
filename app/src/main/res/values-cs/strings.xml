@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">kVexed</string>
+
+    <!-- Navigace / obrazovky -->
+    <string name="packs_title">Vexed</string>
+    <string name="continue_game">Pokračovat</string>
+    <string name="continue_subtitle">Obnovit poslední hru</string>
+    <string name="back">Zpět</string>
+
+    <!-- Skupiny balíčků -->
+    <string name="group_variety">Variety 03–41</string>
+    <string name="section_extra">Extra</string>
+
+    <!-- Seznam úrovní -->
+    <string name="continue_level">Pokračovat úroveň %1$d</string>
+
+    <!-- Ovládání hry -->
+    <string name="undo">Zpět</string>
+    <string name="restart">Restart</string>
+    <string name="hint">Tip</string>
+    <string name="solve">Řešení</string>
+    <string name="next_level">Další úroveň</string>
+
+    <!-- Stav -->
+    <string name="game_moves">Tahy %1$d · Par %2$d</string>
+    <string name="game_best_suffix">" · Rekord %1$d"</string>
+    <string name="game_solved">Vyřešeno na %1$d tahů · par %2$d</string>
+    <string name="game_stuck">Zaseknuto — zpět nebo restart</string>
+    <string name="game_solving">Hledám tip…</string>
+    <string name="game_no_hint">Tip nenalezen — zkus zpět nebo restart</string>
+
+    <!-- Potvrzení zobrazení řešení -->
+    <string name="confirm_show_title">Zobrazit řešení?</string>
+    <string name="confirm_show_body">Tímto se odhalí %1$s řešení (%2$d tahů) — můžeš ho projít tah po tahu. Prozradí to hádanku.</string>
+    <string name="solution_kind_best">nejlepší známé</string>
+    <string name="solution_kind_full">úplné</string>
+    <string name="show">Zobrazit</string>
+    <string name="cancel">Zrušit</string>
+
+    <!-- Prohlížeč řešení -->
+    <string name="solution_header">Řešení · %1$s %2$d</string>
+    <string name="solution_best">nejlepší</string>
+    <string name="solution_par">par</string>
+    <string name="solution_move">Tah %1$d/%2$d</string>
+    <string name="prev">‹ Zpět</string>
+    <string name="next_arrow">Další ›</string>
+    <string name="done">Hotovo</string>
+
+    <!-- Nastavení -->
+    <string name="settings">Nastavení</string>
+    <string name="settings_show_solve">Tlačítko Řešení</string>
+    <string name="settings_show_solve_sub">Zobrazit nejlepší známé řešení během hry</string>
+    <string name="settings_haptics">Haptická odezva</string>
+    <string name="settings_haptics_sub">Vibrace při každém dokončeném tahu</string>
+    <string name="close">Zavřít</string>
+
+    <!-- O aplikaci -->
+    <string name="about">O aplikaci</string>
+    <string name="about_title">kVexed</string>
+    <string name="about_version">Verze %1$s</string>
+    <string name="about_author">od Ondřeje Koloničného</string>
+    <string name="about_desc">Vexed, klasická logická hra s posouváním bloků, pro Mudita Kompakt. Plně offline — bez sítě, bez oprávnění.</string>
+    <string name="about_license">Licence: GPL-2.0</string>
+    <string name="about_credits">Vexed od Jamese McCombea (1999). Verze Classic II a barevná verze od Steva Haynala a Marka Ingebretsona (2001). Data úrovní: Vexed Development Team / SourceForge projekt Vexed v2.2. Formát VXL: dlvoy/flipper-zero-vexed.</string>
+    <string name="about_coffee">Kup mi kávu</string>
+    <string name="about_github">GitHub</string>
+</resources>

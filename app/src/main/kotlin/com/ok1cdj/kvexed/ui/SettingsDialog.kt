@@ -16,10 +16,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import com.ok1cdj.kvexed.R
 import com.ok1cdj.kvexed.data.Settings
 import com.mudita.mmd.components.buttons.ButtonMMD
 import com.mudita.mmd.components.text.TextMMD
@@ -39,19 +41,19 @@ fun SettingsDialog(
                 .background(Color.White, RoundedCornerShape(12.dp))
                 .padding(16.dp),
         ) {
-            TextMMD(text = "Settings", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+            TextMMD(text = stringResource(R.string.settings), fontSize = 20.sp, fontWeight = FontWeight.Bold)
             Spacer(Modifier.height(12.dp))
 
             ToggleRow(
-                label = "Show Solve button",
-                sub = "Reveal the best-known solution during play",
+                label = stringResource(R.string.settings_show_solve),
+                sub = stringResource(R.string.settings_show_solve_sub),
                 checked = !settings.hideSolve,
                 onChange = onShowSolve,
             )
             Spacer(Modifier.height(8.dp))
             ToggleRow(
-                label = "Haptic feedback",
-                sub = "Vibrate on each completed move",
+                label = stringResource(R.string.settings_haptics),
+                sub = stringResource(R.string.settings_haptics_sub),
                 checked = settings.haptics,
                 onChange = onHaptics,
             )
@@ -62,7 +64,7 @@ fun SettingsDialog(
                 modifier = Modifier.fillMaxWidth().border(1.dp, Color.Black, RoundedCornerShape(8.dp)),
                 shape = RoundedCornerShape(8.dp),
             ) {
-                TextMMD(text = "Close", fontSize = 15.sp, fontWeight = FontWeight.Bold)
+                TextMMD(text = stringResource(R.string.close), fontSize = 15.sp, fontWeight = FontWeight.Bold)
             }
         }
     }

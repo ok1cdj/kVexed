@@ -23,9 +23,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ok1cdj.kvexed.R
 import com.ok1cdj.kvexed.core.LevelParser
 import com.mudita.mmd.components.text.TextMMD
 
@@ -60,7 +62,7 @@ fun LevelListScreen(vm: GameViewModel, packId: String) {
                         .clickable { vm.openLevel(packId, resume) }
                         .padding(horizontal = 16.dp, vertical = 10.dp),
                 ) {
-                    TextMMD(text = "Continue level ${resume + 1}",
+                    TextMMD(text = stringResource(R.string.continue_level, resume + 1),
                         fontSize = 15.sp, fontWeight = FontWeight.Bold)
                 }
             }

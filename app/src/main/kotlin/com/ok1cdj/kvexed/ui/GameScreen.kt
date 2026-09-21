@@ -30,9 +30,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ok1cdj.kvexed.R
 import com.ok1cdj.kvexed.core.Board
 import com.ok1cdj.kvexed.core.Direction
 import com.ok1cdj.kvexed.core.GameState
@@ -104,14 +106,14 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit, onSettings: () -> Unit) {
         // Status / end-state message — full width on its own line, so it always
         // fits regardless of move count. Shows the tighter "best-known" target
         // next to par when we have a shorter solution for this level.
-        val bestSuffix = vm.bestPar?.let { " · Best $it" } ?: ""
+        val bestSuffix = vm.bestPar?.let { stringResource(R.string.game_best_suffix, it) } ?: ""
         val message = when (vm.gameState) {
-            GameState.WON -> "Solved in ${vm.moveCount} moves · par ${vm.par}$bestSuffix"
-            GameState.LOST -> "Stuck — undo or restart"
+            GameState.WON -> stringResource(R.string.game_solved, vm.moveCount, vm.par) + bestSuffix
+            GameState.LOST -> stringResource(R.string.game_stuck)
             GameState.PLAYING -> when {
-                vm.hintSolving -> "Solving for a hint…"
-                vm.hintUnsolved -> "No hint found — try undo or restart"
-                else -> "Moves ${vm.moveCount} · Par ${vm.par}$bestSuffix"
+                vm.hintSolving -> stringResource(R.string.game_solving)
+                vm.hintUnsolved -> stringResource(R.string.game_no_hint)
+                else -> stringResource(R.string.game_moves, vm.moveCount, vm.par) + bestSuffix
             }
         }
         Box(
@@ -137,19 +139,19 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit, onSettings: () -> Unit) {
             val fs = if (solve) 13.sp else 15.sp
             when (vm.gameState) {
                 GameState.WON -> {
-                    GameButton("Next level", modifier = Modifier.weight(1f), onClick = vm::nextLevel)
-                    if (solve) GameButton("Solve", fontSize = 14.sp, modifier = Modifier.weight(1f)) { confirmSolution = true }
+                    GameButton(stringResource(R.string.next_level), modifier = Modifier.weight(1f), onClick = vm::nextLevel)
+                    if (solve) GameButton(stringResource(R.string.solve), fontSize = 14.sp, modifier = Modifier.weight(1f)) { confirmSolution = true }
                 }
                 GameState.LOST -> {
-                    GameButton("Undo", enabled = vm.canUndo, fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::undo)
-                    GameButton("Restart", fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::restart)
-                    if (solve) GameButton("Solve", fontSize = fs, modifier = Modifier.weight(1f)) { confirmSolution = true }
+                    GameButton(stringResource(R.string.undo), enabled = vm.canUndo, fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::undo)
+                    GameButton(stringResource(R.string.restart), fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::restart)
+                    if (solve) GameButton(stringResource(R.string.solve), fontSize = fs, modifier = Modifier.weight(1f)) { confirmSolution = true }
                 }
                 GameState.PLAYING -> {
-                    GameButton("Undo", enabled = vm.canUndo, fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::undo)
-                    GameButton("Restart", fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::restart)
-                    GameButton("Hint", enabled = vm.hintAvailable, fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::showHint)
-                    if (solve) GameButton("Solve", fontSize = fs, modifier = Modifier.weight(1f)) { confirmSolution = true }
+                    GameButton(stringResource(R.string.undo), enabled = vm.canUndo, fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::undo)
+                    GameButton(stringResource(R.string.restart), fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::restart)
+                    GameButton(stringResource(R.string.hint), enabled = vm.hintAvailable, fontSize = fs, modifier = Modifier.weight(1f), onClick = vm::showHint)
+                    if (solve) GameButton(stringResource(R.string.solve), fontSize = fs, modifier = Modifier.weight(1f)) { confirmSolution = true }
                 }
             }
         }
@@ -157,11 +159,11 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit, onSettings: () -> Unit) {
 
     if (confirmSolution) {
         val n = vm.bestPar ?: vm.par
-        val kind = if (vm.bestPar != null) "best-known" else "full"
+        val kind = stringResource(if (vm.bestPar != null) R.string.solution_kind_best else R.string.solution_kind_full)
         ConfirmDialog(
-            title = "Show solution?",
-            body = "This reveals the $kind solution ($n moves) — step through it move by move. It will spoil the puzzle.",
-            confirmLabel = "Show",
+            title = stringResource(R.string.confirm_show_title),
+            body = stringResource(R.string.confirm_show_body, kind, n),
+            confirmLabel = stringResource(R.string.show),
             onConfirm = { confirmSolution = false; vm.startSolution() },
             onDismiss = { confirmSolution = false },
         )
@@ -179,8 +181,9 @@ private fun SolutionView(vm: GameViewModel) {
         ) {
             BackButton(onClick = vm::exitSolution)
             Spacer(Modifier.width(4.dp))
+            val kind = stringResource(if (vm.solutionIsBest) R.string.solution_best else R.string.solution_par)
             TextMMD(
-                text = "Solution · ${if (vm.solutionIsBest) "best known" else "par"} ${vm.solutionLength}",
+                text = stringResource(R.string.solution_header, kind, vm.solutionLength),
                 fontSize = 16.sp, fontWeight = FontWeight.Bold,
             )
         }
@@ -194,7 +197,7 @@ private fun SolutionView(vm: GameViewModel) {
             modifier = Modifier.fillMaxWidth().height(40.dp).padding(horizontal = 12.dp),
             contentAlignment = Alignment.CenterStart,
         ) {
-            TextMMD(text = "Move ${vm.solutionStep}/${vm.solutionLength}", fontSize = 15.sp)
+            TextMMD(text = stringResource(R.string.solution_move, vm.solutionStep, vm.solutionLength), fontSize = 15.sp)
         }
 
         Row(
@@ -202,9 +205,9 @@ private fun SolutionView(vm: GameViewModel) {
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            GameButton("‹ Prev", enabled = vm.solutionStep > 0, modifier = Modifier.weight(1f), onClick = vm::solutionPrev)
-            GameButton("Next ›", enabled = vm.solutionStep < vm.solutionLength, modifier = Modifier.weight(1f), onClick = vm::solutionNext)
-            GameButton("Done", modifier = Modifier.weight(1f), onClick = vm::exitSolution)
+            GameButton(stringResource(R.string.prev), enabled = vm.solutionStep > 0, modifier = Modifier.weight(1f), onClick = vm::solutionPrev)
+            GameButton(stringResource(R.string.next_arrow), enabled = vm.solutionStep < vm.solutionLength, modifier = Modifier.weight(1f), onClick = vm::solutionNext)
+            GameButton(stringResource(R.string.done), modifier = Modifier.weight(1f), onClick = vm::exitSolution)
         }
     }
 }
@@ -230,7 +233,7 @@ private fun ConfirmDialog(
             TextMMD(text = body, fontSize = 14.sp)
             Spacer(Modifier.height(16.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                GameButton("Cancel", modifier = Modifier.weight(1f), onClick = onDismiss)
+                GameButton(stringResource(R.string.cancel), modifier = Modifier.weight(1f), onClick = onDismiss)
                 GameButton(confirmLabel, modifier = Modifier.weight(1f), onClick = onConfirm)
             }
         }

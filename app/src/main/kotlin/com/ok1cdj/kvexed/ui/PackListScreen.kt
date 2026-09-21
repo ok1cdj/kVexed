@@ -22,9 +22,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ok1cdj.kvexed.R
 import com.ok1cdj.kvexed.core.PackGroup
 import com.ok1cdj.kvexed.core.PackInfo
 import com.mudita.mmd.components.text.TextMMD
@@ -46,7 +48,7 @@ fun PackListScreen(vm: GameViewModel, onAbout: () -> Unit, onSettings: () -> Uni
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
-            TextMMD(text = "Vexed", fontSize = 22.sp, fontWeight = FontWeight.Bold)
+            TextMMD(text = stringResource(R.string.packs_title), fontSize = 22.sp, fontWeight = FontWeight.Bold)
             Row(verticalAlignment = Alignment.CenterVertically) {
                 SettingsButton(onClick = onSettings)
                 InfoButton(onClick = onAbout)
@@ -56,7 +58,8 @@ fun PackListScreen(vm: GameViewModel, onAbout: () -> Unit, onSettings: () -> Uni
         LazyColumn(modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp)) {
             if (vm.progress.lastPackId != null) {
                 item {
-                    PackRow(title = "Continue", subtitle = "Resume last game", solved = null,
+                    PackRow(title = stringResource(R.string.continue_game),
+                        subtitle = stringResource(R.string.continue_subtitle), solved = null,
                         onClick = vm::continueGame)
                     Spacer(Modifier.height(12.dp))
                 }
@@ -65,8 +68,9 @@ fun PackListScreen(vm: GameViewModel, onAbout: () -> Unit, onSettings: () -> Uni
             items(canonical) { info -> PackItem(info, vm, onOpen = { vm.openPack(info.id) }) }
 
             item {
+                val varietyLabel = stringResource(R.string.group_variety)
                 SectionHeader(
-                    text = if (varietyOpen) "Variety 03–41 ▾" else "Variety 03–41 ▸",
+                    text = if (varietyOpen) "$varietyLabel ▾" else "$varietyLabel ▸",
                     onClick = { varietyOpen = !varietyOpen },
                 )
             }
@@ -75,7 +79,7 @@ fun PackListScreen(vm: GameViewModel, onAbout: () -> Unit, onSettings: () -> Uni
             }
 
             if (extra.isNotEmpty()) {
-                item { SectionHeader(text = "Extra", onClick = {}) }
+                item { SectionHeader(text = stringResource(R.string.section_extra), onClick = {}) }
                 items(extra) { info -> PackItem(info, vm, onOpen = { vm.openPack(info.id) }) }
             }
 

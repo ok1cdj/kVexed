@@ -21,15 +21,18 @@ permissions, no services.**
   adjacent same-type blocks clear simultaneously, which can chain.
 - Bundles the original **Vexed level packs** (48 packs, 2800 puzzles), each with
   a par derived from the shipped human solution — golf your move count against it.
-- **Unlimited undo**, restart, and a **hint** that reveals the next move of the
-  stored solution. The hint is offered only while you're still on that solution
-  path; once you play a different move it's disabled (with a one-line note)
-  rather than pointing at a stale move — an undo walks you back onto the path.
+- **Unlimited undo**, restart, and a **hint** that reveals the next useful move.
+  While you're still on the stored solution path it shows that move instantly;
+  once you deviate, a bundled **runtime solver** (`core/Solver.kt`, a
+  breadth-first search that reuses the game engine) works out a fresh shortest
+  move from the current board in the background — so the hint keeps working from
+  any position you can reach, or honestly says none was found within its budget.
 - **Settings** (gear, top-right): show/hide a **Solve** button that steps through
   the best-known solution (hidden by default so it doesn't spoil), and toggle
   optional **haptic feedback** on each move (uses the system haptic channel — no
   `VIBRATE` permission).
 - Resumes exactly where you left off after the app is killed.
+- **English and Czech** interface, chosen automatically from the system language.
 - Built for e-ink: pure 1-bit black/white, vector block glyphs, no animations,
   tap-to-move (no swipe).
 
@@ -137,6 +140,7 @@ core/  (pure Kotlin/JVM — no Android on the classpath)
   Board.kt         immutable 10×8 board over CharArray(80)
   Engine.kt        move -> settle -> clear (chains); win/lose; undo
   PathTracker.kt   tracks whether play still follows the stored solution (hint gating)
+  Solver.kt        breadth-first solver for off-path runtime hints (reuses Engine)
   LevelParser.kt   reads index.json + *.vxl from resources
   Level/LevelPack  data classes
 app/   (Android, depends on :core)
