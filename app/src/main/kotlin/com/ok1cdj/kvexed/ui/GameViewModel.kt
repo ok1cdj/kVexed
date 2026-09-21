@@ -17,12 +17,16 @@ import com.ok1cdj.kvexed.core.Move
 import com.ok1cdj.kvexed.core.MoveResult
 import com.ok1cdj.kvexed.core.PackInfo
 import com.ok1cdj.kvexed.core.PathTracker
+import com.ok1cdj.kvexed.core.Solver
 import com.ok1cdj.kvexed.data.LevelStat
 import com.ok1cdj.kvexed.data.PackProgress
 import com.ok1cdj.kvexed.data.Progress
 import com.ok1cdj.kvexed.data.ProgressStore
 import com.ok1cdj.kvexed.data.Settings
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /** Which screen is showing. */
 sealed interface Screen {
@@ -73,12 +77,20 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
         private set
     var hint: Move? by mutableStateOf(null)
         private set
+    /** True while an off-path hint is being solved in the background. */
+    var hintSolving by mutableStateOf(false)
+        private set
+    /** Set when an off-path solve finished without finding a move (budget or unsolvable). */
+    var hintUnsolved by mutableStateOf(false)
+        private set
     private var hintUsedThisLevel = false
+    private var hintJob: Job? = null
 
     /**
      * Position along the stored solution: `n` means the first `n` moves matched
-     * `solutionMoves[0..n)`, so `solutionMoves[n]` is the next hintable move.
-     * `null` once the player deviates — hints are then withheld (see [hintAvailable]).
+     * `solutionMoves[0..n)`, so `solutionMoves[n]` is the next stored hint move.
+     * `null` once the player deviates — off-path, [showHint] falls back to the
+     * runtime [Solver] instead of a stored move.
      */
     var pathIndex: Int? by mutableStateOf(0)
         private set
@@ -99,8 +111,12 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
     val packTitle: String get() = pack?.title ?: ""
     val levelCount: Int get() = pack?.levels?.size ?: 0
     val canUndo: Boolean get() = undoStack.isNotEmpty()
-    /** Hint is offered only while the player is on the stored solution path. */
-    val hintAvailable: Boolean get() = pathIndex?.let { it < solutionMoves.size } ?: false
+    /**
+     * A hint can be offered whenever the game is in play: on the stored path it's
+     * the next stored move (instant); off-path the runtime [Solver] finds one from
+     * the current board. Disabled only once won or stuck.
+     */
+    val hintAvailable: Boolean get() = gameState == GameState.PLAYING && !hintSolving
 
     val solutionBoard: Board? get() = solutionBoards.getOrNull(solutionStep)
     val solutionLength: Int get() = solutionMoveList.size
@@ -158,7 +174,7 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
         level = lv
         solutionMoves = runCatching { lv.solutionMoves() }.getOrDefault(emptyList())
         undoStack.clear()
-        hint = null
+        clearHint()
         selected = null
         hintUsedThisLevel = progress.packs[packId]?.levels?.get(index)?.hintUsed ?: false
 
@@ -197,7 +213,7 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
     fun onCellTap(x: Int, y: Int) {
         val b = board ?: return
         if (gameState == GameState.WON) return
-        hint = null
+        clearHint()
 
         val sel = selected
         if (sel == null) {
@@ -240,7 +256,7 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
         pathIndex = prevIndex
         moveCount--
         selected = null
-        hint = null
+        clearHint()
         gameState = Engine.state(board!!)
     }
 
@@ -251,20 +267,50 @@ class GameViewModel(app: Application) : AndroidViewModel(app) {
         pathIndex = 0
         undoStack.clear()
         selected = null
-        hint = null
+        clearHint()
         gameState = Engine.state(board!!)
     }
 
     /**
-     * Reveal only the next move of the stored solution. Only meaningful while on
-     * the path ([hintAvailable]); off-path it yields no move. Marks the level as hinted.
+     * Reveal the next move toward a solution. On the stored path that's the next
+     * stored move (instant). Off-path — the player has deviated — the runtime
+     * [Solver] searches from the current board on a background thread and reveals
+     * the first move of a shortest solution (or leaves [hintUnsolved] set if the
+     * search hit its budget or the board is genuinely stuck). Marks the level as
+     * hinted once a move is shown.
      */
     fun showHint() {
-        hint = pathIndex?.let { solutionMoves.getOrNull(it) }
         selected = null
-        if (hint != null) {
+        hintUnsolved = false
+        hintJob?.cancel()
+
+        // On the stored path: the next stored move is known-good and free.
+        val idx = pathIndex
+        if (idx != null && idx < solutionMoves.size) {
+            hint = solutionMoves[idx]
             hintUsedThisLevel = true
+            return
         }
+
+        // Off-path: solve from the live board off the main thread.
+        val b = board ?: return
+        if (gameState != GameState.PLAYING) return
+        hint = null
+        hintSolving = true
+        hintJob = viewModelScope.launch {
+            val move = withContext(Dispatchers.Default) { Solver.solve(b).firstMove }
+            hintSolving = false
+            hint = move
+            if (move != null) hintUsedThisLevel = true else hintUnsolved = true
+        }
+    }
+
+    /** Drop any shown hint and cancel an in-flight solve (on move, undo, restart). */
+    private fun clearHint() {
+        hintJob?.cancel()
+        hint = null
+        hintSolving = false
+        hintUnsolved = false
     }
 
     // --- solution playback ----------------------------------------------------

@@ -108,10 +108,11 @@ fun GameScreen(vm: GameViewModel, onAbout: () -> Unit, onSettings: () -> Unit) {
         val message = when (vm.gameState) {
             GameState.WON -> "Solved in ${vm.moveCount} moves · par ${vm.par}$bestSuffix"
             GameState.LOST -> "Stuck — undo or restart"
-            // Off the stored path the hint can't be trusted; say so instead of the tally.
-            GameState.PLAYING ->
-                if (!vm.hintAvailable) "Hint unavailable — off the stored solution path"
-                else "Moves ${vm.moveCount} · Par ${vm.par}$bestSuffix"
+            GameState.PLAYING -> when {
+                vm.hintSolving -> "Solving for a hint…"
+                vm.hintUnsolved -> "No hint found — try undo or restart"
+                else -> "Moves ${vm.moveCount} · Par ${vm.par}$bestSuffix"
+            }
         }
         Box(
             modifier = Modifier.fillMaxWidth().height(40.dp).padding(horizontal = 12.dp),
